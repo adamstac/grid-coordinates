@@ -1,0 +1,43 @@
+h1. Grid Coordinates - Compass Plugin
+
+Grid Coordinates is Simple. Grid Coordinates is just a grid. It also supports nested grids and is also able to generate the CSS for a multitude of grid coordinates.
+
+The default grid setup is 960px wide, 12 columns at 60px each with a 20px gutter. Feel free to mix it up with something like -- 960 / 16 / 40 / 20, or 800 / 10 / 60 / 20.
+
+Just update the 4 variables to change the coordinates of your grid. Use 1kbgrid.com as a guide to the grid's coordinate options.
+
+Grid Coordinates is a "Compass":http://compass-style.org/ plugin based on Tyler Tate's 1kb CSS Grid project.
+
+h2. Install
+
+  sudo gem install chriseppstein-compass
+  sudo gem install handcrafted-compass-grid-coordinates-plugin
+
+h2. Create a Grid Coordinates-based Compass Project
+
+  compass -r grid-coordinates -f 'Grid Coordinates' <project name>
+
+Then edit your 'grid.sass' file accordingly. Compass's Utilities and Blueprint's reset are added into grid.sass automatically. Your default setup may differ, and that's ok.
+
+h2. Customizing your Grid System
+
+...
+
+h2. Making Semantic Grids
+
+...
+
+h2. Note on Patches/Pull Requests
+ 
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but
+   bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+h2. Copyright
+
+Copyright (c) 2009 Adam Stacoviak. See LICENSE for details.

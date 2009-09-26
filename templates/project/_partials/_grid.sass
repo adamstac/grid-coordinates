@@ -1,0 +1,62 @@
+//  The following locks in our grid coordinates
+
+!grid_width ||= 960px
+!grid_columns ||= 12
+!grid_pixels ||= 60px
+!grid_gutter_width ||= 20px
+
+@import grid-coordinates/grid
+
+//  The following generates the CSS for the grid
+//  This is already done for you by the plugin
+//
+//  .grid_container
+//    +grid-container
+//    &.nested
+//      +grid-container("nested")
+//    .grid
+//      &.one
+//        +grid(1)
+//      &.two
+//        +grid(2)
+//      &.three
+//        +grid(3)
+//      &.four
+//        +grid(4)
+//      &.five
+//        +grid(5)
+//      &.six
+//        +grid(6)
+//      &.seven
+//        +grid(7)
+//      &.eight
+//        +grid(8)
+//      &.nine
+//        +grid(9)
+//      &.ten
+//        +grid(10)
+//      &.eleven
+//        +grid(11)
+//      &.twelve
+//        +grid(12)
+//      &.full
+//        +grid-full
+
+//  Like most Compass users, I prefer to build semantic layouts
+//  For example:
+//
+//  #branding, #page, #footer
+//    +grid-container
+//  
+//  #branding
+//    +grid(4)
+//  #nav_aux
+//    +grid(8)
+//  
+//  #page_body
+//    +grid(8)
+//    &.wide
+//      +grid(12)
+//  
+//  #page_sidebar
+//    +grid(4)
