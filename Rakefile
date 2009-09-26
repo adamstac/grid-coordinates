@@ -12,7 +12,7 @@ begin
     gem.email = "adam@gethandcrafted.com"
     gem.homepage = "http://github.com/handcrafted/compass-grid-coordinates-plugin"
     gem.authors = ["Adam Stacoviak"]
-    gem.add_dependency('chriseppstein-compass', '>= 0')
+    gem.add_dependency('compass', '>= 0.8.16')
     gem.add_development_dependency('echoe', '>= 0')
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.files.include %w(lib/**/*)

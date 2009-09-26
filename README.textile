@@ -10,12 +10,13 @@ Grid Coordinates is a "Compass":http://compass-style.org/ plugin based on Tyler 
 
 h2. Install
 
-  sudo gem install chriseppstein-compass
-  sudo gem install handcrafted-compass-grid-coordinates-plugin
+bc. sudo gem sources -a http://gemcutter.org/
+sudo gem install compass
+sudo gem install compass-grid-coordinates-plugin
 
 h2. Create a Grid Coordinates-based Compass Project
 
-  compass -r grid-coordinates -f 'Grid Coordinates' <project name>
+bc. compass -r grid-coordinates -f 'Grid Coordinates' <project name>
 
 Then edit your 'grid.sass' file accordingly. Compass's Utilities and Blueprint's reset are added into grid.sass automatically. Your default setup may differ, and that's ok.
 
@@ -30,10 +31,9 @@ h2. Making Semantic Grids
 h2. Note on Patches/Pull Requests
  
 * Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
+* Have fun...add new features, hack, hack, bug fix, etc.
+* Comment your code using the existing comment syntax in the plugin
+* Commit, DO NOT mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
