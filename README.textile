@@ -8,29 +8,46 @@ Just update the 4 variables to change the coordinates of your grid. Use 1kbgrid.
 
 Grid Coordinates is a "Compass":http://compass-style.org/ plugin based on Tyler Tate's 1kb CSS Grid project.
 
-h2. Install
+h2. Installation
 
-bc. sudo gem sources -a http://gemcutter.org/
-sudo gem install compass
-sudo gem install compass-grid-coordinates-plugin
+First let's make sure we have both GitHub and Gemcutter set as sources for Gems. You can check your current sources by entering @gem sources@ in your command prompt.
+
+bc. sudo gem sources -a http://gems.github.com/
+sudo gem sources -a http://gemcutter.org/
+
+Next, let's install Grid Coordinates and Compass
+
+bc. sudo gem install compass-grid-coordinates-plugin
+
+Compass should get installed with Grid Coordinates because it's set as a dependency. If for some reason it didn't, you will need to manually install it.
+
+bc. gem install chriseppstein-compass
 
 h2. Create a Grid Coordinates-based Compass Project
 
-bc. compass -r grid-coordinates -f 'Grid Coordinates' <project name>
+bc. rails myapp
+cd myapp
+compass --rails -r grid-coordinates -f grid-coordinates .
 
-Then edit your 'grid.sass' file accordingly. Compass's Utilities and Blueprint's reset are added into grid.sass automatically. Your default setup may differ, and that's ok.
+You'll be asked the default Compass setup questions such as where to place your Sass and Compiled CSS.
+
+Once that is finished, you'll want to take a peek at @partials/_grid.sass@.
+
+By default @compass/utilities.sass@ and @blueprint/reset.sass@ are being imported into your new @partials/_base.sass@ file.
+
+Your setup may differ. And that's ok.
 
 h2. Customizing your Grid System
 
-...
+[[Customize your grid]]
 
 h2. Making Semantic Grids
 
-...
+[[Building a semantic grid]]
 
-h2. Note on Patches/Pull Requests
+h2. Note on patches and pull requests
  
-* Fork the project.
+* Fork the project!
 * Have fun...add new features, hack, hack, bug fix, etc.
 * Comment your code using the existing comment syntax in the plugin
 * Commit, DO NOT mess with rakefile, version, or history.

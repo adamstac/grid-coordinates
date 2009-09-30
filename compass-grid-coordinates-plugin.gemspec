@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{compass-grid-coordinates-plugin}
-  s.version = "1.0.1"
+  s.version = "1.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adam Stacoviak"]
@@ -30,12 +30,10 @@ Gem::Specification.new do |s|
      "lib/grid-coordinates/sass_extensions.rb",
      "sass/grid-coordinates/grid.sass",
      "sass/grid-coordinates/grid.sass",
-     "templates/project/_partials/_base.sass",
-     "templates/project/_partials/_base.sass",
-     "templates/project/_partials/_grid.sass",
-     "templates/project/_partials/_grid.sass",
      "templates/project/manifest.rb",
      "templates/project/manifest.rb",
+     "templates/project/partials/_base.sass",
+     "templates/project/partials/_grid.sass",
      "templates/project/styles.sass",
      "templates/project/styles.sass",
      "test/compass-grid-coordinates-plugin_test.rb",

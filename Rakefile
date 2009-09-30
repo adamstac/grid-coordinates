@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'fileutils'
 require 'sass'
 require 'lib/grid-coordinates/sass_extensions'
 
@@ -60,7 +61,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "compass-starter-plugin #{version}"
+  rdoc.title = "compass-grid-coordinates-plugin #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
