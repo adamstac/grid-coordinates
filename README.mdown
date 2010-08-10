@@ -6,7 +6,7 @@ Grid Coordinates is pretty simple, yet very complex. It sets up the styles for y
 
 ## See sample.sass
 
-The default grid dimensions are - 960px wide with 12 columns at 60px each with a 20px gutter. See 'sample.sass' for an example.
+The default grid dimensions are - 960px wide with 12 columns at 60px each with a 20px gutter. See `sample.sass` for an example.
 
 ## Installation
 
