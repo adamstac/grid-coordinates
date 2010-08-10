@@ -1,8 +1,1 @@
-*.sw?
-*.gem
 .DS_Store
-.document
-.gemspec
-coverage
-rdoc
-pkg
