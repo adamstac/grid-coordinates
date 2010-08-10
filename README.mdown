@@ -1,0 +1,28 @@
+# Grid Coordinates - Sass CSS Grid Framework Mixin
+
+Grid Coordinates is a [Sass](http://sass-lang.com/) mixin inspired by Tyler Tate's 1kb CSS Grid project.
+
+Grid Coordinates is pretty simple, yet very complex. It sets up the styles for your CSS grid framework and supports nested grids as well. It's also able to generate the CSS styles for grid of any dimension - you control the coordinates and it generates the styles.
+
+## See sample.sass
+
+The default grid dimensions are - 960px wide with 12 columns at 60px each with a 20px gutter. See 'sample.sass' for an example.
+
+## Installation
+
+Copy and paste the code from this project, or copy this file (if you pulled down this repo) to your project and import it as you would any other Sass mixin.
+
+    git clone git://github.com/adamstac/grid-coordinates.git
+    cd grid-coordinates
+    cp _grid-coordinates.sass /path/to/project/
+    cd /path/to/project/
+
+## License
+
+Copyright (c) 2009 Adam Stacoviak
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
