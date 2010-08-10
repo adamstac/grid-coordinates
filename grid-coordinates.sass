@@ -20,6 +20,9 @@
 
 =grid(!grid_columns)
   +column
+  +grid-width(!grid-columns)
+
+=grid-width(!grid-columns)
   @if !grid_columns == 1
     width = !grid_pixels
   @else
