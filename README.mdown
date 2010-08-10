@@ -14,7 +14,7 @@ Copy and paste the code from this project, or copy this file (if you pulled down
 
     git clone git://github.com/adamstac/grid-coordinates.git
     cd grid-coordinates
-    cp _grid-coordinates.sass /path/to/project/
+    cp _grid-coordinates.sass /path/to/project/sass/
     cd /path/to/project/
 
 ## License
