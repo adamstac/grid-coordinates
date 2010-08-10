@@ -1,0 +1,24 @@
+//  Lock in the grid coordinates
+
+!grid_columns ||= 12
+!grid_pixels ||= 60px
+!grid_gutter_width ||= 20px
+
+@import grid-coordinates.sass
+
+#header, #page, #footer
+  +grid-container
+
+#header
+  +grid(4)
+
+#nav
+  +grid(8)
+
+#page-body
+  +grid(8)
+  &.wide
+    +grid(12)
+
+#page-sidebar
+  +grid(4)
