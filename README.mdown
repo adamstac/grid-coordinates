@@ -1,6 +1,6 @@
 # Grid Coordinates - Sass CSS Grid Framework Mixin
 
-Grid Coordinates is a [Sass](http://sass-lang.com/) mixin inspired by Tyler Tate's 1kb CSS Grid project.
+Grid Coordinates is a [Sass](http://sass-lang.com/) mixin inspired by Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/) project.
 
 Grid Coordinates is pretty simple, yet very complex. It sets up the styles for your CSS grid framework and supports nested grids as well. It's also able to generate the CSS styles for a grid of any dimension - you control the coordinates and it generates the styles.
 
