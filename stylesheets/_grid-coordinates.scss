@@ -1,0 +1,64 @@
+//  --------------------------------------------------------------------------------
+//  Grid Coordinates was inspired by Tyler Tate's 1kb CSS Grid project (1kbgrid.com)
+//  --------------------------------------------------------------------------------
+//  The default grid is 960px wide, 12 columns at 60px each with a 20px gutter.
+//
+//  Set the 3 variables below to define your grid coordinates.
+//  Use 1kbgrid.com as a guide to the various grid coordinates possible.
+
+@import "compass/utilities";
+
+//  How many grid columns would you like?
+$grid_columns: 12 !default;
+
+//  How many pixels wide would you like each column to be?
+$grid_pixels: 60px !default;
+
+//  How many pixels wide would you like the gutter to be?
+$grid_gutter_width: 20px !default;
+
+//  Set grid width
+$grid_width: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width;
+
+@mixin grid($grid_columns) {
+  @include column;
+  @include grid-width($grid-columns); }
+
+@mixin grid-width($grid-columns) {
+  @if $grid_columns == 1 {
+    width: $grid_pixels; }
+  @else {
+    width: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width - $grid_gutter_width; } }
+
+@mixin column {
+  @include float-left;
+  margin: 0 $grid_gutter_width / 2;
+  overflow: hidden; }
+
+@mixin grid-container {
+  margin: 0 auto;
+  overflow: hidden;
+  width: $grid_width; }
+
+@mixin nested-grid-container {
+  display: inline-block;
+  margin: {
+    left: -$grid_gutter_width / 2;
+    right: -$grid_gutter_width / 2; };
+  overflow: hidden;
+  width: auto; }
+
+@mixin grid-prefix($grid_columns) {
+  @if $grid_columns == 1 {
+    padding-left: $grid_pixels + $grid_gutter_width; }
+  @else {
+    padding-left: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width; } }
+
+@mixin grid-suffix($grid_columns) {
+  @if $grid_columns == 1 {
+    padding-right: $grid_pixels + $grid_gutter_width; }
+  @else {
+    padding-right: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width; } }
+
+@mixin grid-full {
+  @include grid($grid_columns); }

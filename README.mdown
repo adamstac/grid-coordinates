@@ -1,21 +1,16 @@
-# Grid Coordinates - Sass CSS Grid Framework Mixin
+# Grid Coordinates - Sass CSS Grid Framework Generator (Compass Extension)
 
 Grid Coordinates is a [Sass](http://sass-lang.com/) mixin inspired by Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/) project.
 
 Grid Coordinates is pretty simple, yet very complex. It sets up the styles for your CSS grid framework and supports nested grids as well. It's also able to generate the CSS styles for a grid of any dimension - you control the coordinates and it generates the styles.
 
-## See sample.sass
-
-The default grid dimensions are - 960px wide with 12 columns at 60px each with a 20px gutter. See `sample.sass` for an example.
-
 ## Installation
 
-Copy and paste the code from this project, or copy this file (if you pulled down this repo) to your project and import it as you would any other Sass mixin.
+You will need to install this to your specified Compass extensions directory. See the Compass documentation on extensions for more details: [http://compass-style.org/docs/tutorials/extensions/](http://compass-style.org/docs/tutorials/extensions/)
 
-    git clone git://github.com/adamstac/grid-coordinates.git
-    cd grid-coordinates
-    cp _grid-coordinates.sass /path/to/project/sass/
-    cd /path/to/project/
+## Usage
+
+The default grid dimensions are - 960px wide with 12 columns at 60px each with a 20px gutter. See `templates/project/screen.sass` for an example.
 
 ## License
 
