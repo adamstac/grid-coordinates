@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
   # Gem Files
   s.files = [
     "README.mdown",
-    "grid-coordinates.rb",
     "VERSION"
   ]
+  s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
   s.files += Dir.glob("templates/**/*.*")
 
