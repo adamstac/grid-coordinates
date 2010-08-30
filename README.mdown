@@ -8,7 +8,7 @@ Grid Coordinates is pretty simple, yet very complex. It sets up the styles for y
 
 `sudo gem install grid-coordinates`
 
-Add `require 'grid-coordinates' to your Compass config file`.
+Add `require 'grid-coordinates'` to your Compass config file.
 
 ## Usage
 
