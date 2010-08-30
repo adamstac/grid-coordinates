@@ -9,56 +9,56 @@
 @import "compass/utilities";
 
 //  How many grid columns would you like?
-$grid_columns: 12 !default;
+$grid-columns: 12 !default;
 
 //  How many pixels wide would you like each column to be?
-$grid_pixels: 60px !default;
+$grid-pixels: 60px !default;
 
 //  How many pixels wide would you like the gutter to be?
-$grid_gutter_width: 20px !default;
+$grid-gutter-width: 20px !default;
 
 //  Set grid width
-$grid_width: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width;
+$grid-width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width;
 
-@mixin grid($grid_columns) {
+@mixin grid($grid-columns) {
   @include column;
   @include grid-width($grid-columns); }
 
 @mixin grid-width($grid-columns) {
-  @if $grid_columns == 1 {
-    width: $grid_pixels; }
+  @if $grid-columns == 1 {
+    width: $grid-pixels; }
   @else {
-    width: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width - $grid_gutter_width; } }
+    width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width - $grid-gutter-width; } }
 
 @mixin column {
   @include float-left;
-  margin: 0 $grid_gutter_width / 2;
+  margin: 0 $grid-gutter-width / 2;
   overflow: hidden; }
 
 @mixin grid-container {
   margin: 0 auto;
   overflow: hidden;
-  width: $grid_width; }
+  width: $grid-width; }
 
 @mixin nested-grid-container {
   display: inline-block;
   margin: {
-    left: -$grid_gutter_width / 2;
-    right: -$grid_gutter_width / 2; };
+    left: -$grid-gutter-width / 2;
+    right: -$grid-gutter-width / 2; };
   overflow: hidden;
   width: auto; }
 
-@mixin grid-prefix($grid_columns) {
-  @if $grid_columns == 1 {
-    padding-left: $grid_pixels + $grid_gutter_width; }
+@mixin grid-prefix($grid-columns) {
+  @if $grid-columns == 1 {
+    padding-left: $grid-pixels + $grid-gutter-width; }
   @else {
-    padding-left: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width; } }
+    padding-left: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width; } }
 
-@mixin grid-suffix($grid_columns) {
-  @if $grid_columns == 1 {
-    padding-right: $grid_pixels + $grid_gutter_width; }
+@mixin grid-suffix($grid-columns) {
+  @if $grid-columns == 1 {
+    padding-right: $grid-pixels + $grid-gutter-width; }
   @else {
-    padding-right: $grid_columns * $grid_pixels + $grid_columns * $grid_gutter_width; } }
+    padding-right: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width; } }
 
 @mixin grid-full {
-  @include grid($grid_columns); }
+  @include grid($grid-columns); }
