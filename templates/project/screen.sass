@@ -6,18 +6,18 @@ $grid-gutter-width: 20px
 @import path/to/grid-coordinates
 
 #header, #page, #footer
-  +grid-container
+  @include grid-container
 
 #header
-  +grid(4)
+  @include grid(4)
 
 #nav
-  +grid(8)
+  @include grid(8)
 
 #page-body
-  +grid(8)
+  @include grid(8)
   &.wide
-    +grid(12)
+    @include grid(12)
 
 #page-sidebar
-  +grid(4)
+  @include grid(4)

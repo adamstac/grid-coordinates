@@ -10,7 +10,34 @@ You will need to install this to your specified Compass extensions directory. Se
 
 ## Usage
 
-The default grid dimensions are - 960px wide with 12 columns at 60px each with a 20px gutter. See `templates/project/screen.sass` for an example.
+The default grid dimensions are set to create a 960px wide grid with 12 columns at 60px each with a 20px gutter.
+
+See `templates/project/screen.sass` for an example.
+
+Start your project by adding grid-coordinates to your `extensions` directory in your sass folder.
+
+### Configure as needed and import
+
+    //  Configure grid coordinates
+    $grid-columns: 12
+    $grid-pixels: 60px
+    $grid-gutter-width: 20px
+    
+    @import extensions/grid-coordinates
+
+### Available mixins
+
+`grid-container`
+
+`nested-grid-container`
+
+`grid($grid-columns)`
+
+`grid-prefix($grid-columns)`
+
+`grid-suffix($grid-columns)`
+
+`grid-full`
 
 ## License
 
