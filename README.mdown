@@ -6,24 +6,24 @@ Grid Coordinates is pretty simple, yet very complex. It sets up the styles for y
 
 ## Installation
 
-You will need to install this to your specified Compass extensions directory. See the Compass documentation on extensions for more details: [http://compass-style.org/docs/tutorials/extensions/](http://compass-style.org/docs/tutorials/extensions/)
+`sudo gem install grid-coordinates`
+
+Add `require 'grid-coordinates' to your Compass config file`.
 
 ## Usage
 
-The default grid dimensions are set to create a 960px wide grid with 12 columns at 60px each with a 20px gutter.
+The default grid-coordinates defaults have been set to create a 960px wide grid with 12 columns at 60px with a gutter of 20px. You can override these as needed in your project if the 960px grid doesn't suit your needs.
 
 See `templates/project/screen.sass` for an example.
-
-Start your project by adding grid-coordinates to your `extensions` directory in your sass folder.
 
 ### Configure as needed and import
 
     //  Configure grid coordinates
-    $grid-columns: 12
-    $grid-pixels: 60px
+    $grid-columns: 16
+    $grid-pixels: 40px
     $grid-gutter-width: 20px
     
-    @import extensions/grid-coordinates
+    @import grid-coordinates
 
 ### Available mixins
 
