@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.date = "2010-08-30"
 
   # Gem Details
-  s.name = "grid-cordinates"
+  s.name = "grid-coordinates"
   s.authors = ["Adam Stacoviak"]
   s.summary = %q{A Sass CSS Grid Framework Generator}
   s.description = %q{A Sass CSS Grid Framework Generator (Compass Extension) inspired by the 1kb CSS Grid project}
