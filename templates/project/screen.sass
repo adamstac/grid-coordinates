@@ -1,14 +1,20 @@
+@import compass
+
 //  Configure grid coordinates
 $grid-columns: 12
 $grid-pixels: 60px
 $grid-gutter-width: 20px
 
-@import path/to/grid-coordinates
+@import grid-coordinates
+
+body
+  font: bold 14px helvetica, arial, sans-serif
+  padding-top: 20px
 
 #header, #page, #footer
   @include grid-container
 
-#header
+#brand
   @include grid(4)
 
 #nav
@@ -17,7 +23,23 @@ $grid-gutter-width: 20px
 #page-body
   @include grid(8)
   &.wide
-    @include grid(12)
+    @include grid-full
 
 #page-sidebar
   @include grid(4)
+
+#footer-body
+  @include grid-full
+
+.common
+  background: #ddd
+  margin-bottom: 20px
+  text-align: center
+  
+#brand, #nav, #footer-body
+  @extend .common
+  line-height: 100px
+
+#page-body, #page-sidebar
+  @extend .common
+  line-height: 400px

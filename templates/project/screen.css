@@ -1,0 +1,71 @@
+body {
+  font: bold 14px helvetica, arial, sans-serif;
+  padding-top: 20px;
+}
+
+#header, #page, #footer {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 960px;
+}
+
+#brand {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 300px;
+}
+
+#nav {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 620px;
+}
+
+#page-body {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 620px;
+}
+#page-body.wide {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 940px;
+}
+
+#page-sidebar {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 300px;
+}
+
+#footer-body {
+  display: inline;
+  float: left;
+  margin: 0 10px;
+  overflow: hidden;
+  width: 940px;
+}
+
+.common, #brand, #nav, #footer-body, #page-body, #page-body.wide, #page-sidebar {
+  background: #dddddd;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#brand, #nav, #footer-body {
+  line-height: 100px;
+}
+
+#page-body, #page-body.wide, #page-sidebar {
+  line-height: 400px;
+}

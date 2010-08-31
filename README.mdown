@@ -1,8 +1,8 @@
 # Grid Coordinates - Sass CSS Grid Framework Generator (Compass Extension)
 
-Grid Coordinates is a [Sass](http://sass-lang.com/) mixin inspired by Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/) project.
+Grid Coordinates is a [Sass](http://sass-lang.com/) CSS Grid Framework Generator delivered as a [Compass](http://compass-style.org/) extension. This project was inspired by Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/) project.
 
-Grid Coordinates is pretty simple, yet very complex. It sets up the styles for your CSS grid framework and supports nested grids as well. It's also able to generate the CSS styles for a grid of any dimension - you control the coordinates and it generates the styles.
+Grid Coordinates is quite simple. It sets up the styles for your CSS grid framework and even supports nested grids as well. It's also able to generate styles for grids of any size - you control the coordinates and it generates the styles.
 
 ## Installation
 
@@ -13,6 +13,8 @@ Add `require 'grid-coordinates'` to your Compass config file.
 ## Usage
 
 The default grid-coordinates defaults have been set to create a 960px wide grid with 12 columns at 60px with a gutter of 20px. You can override these as needed in your project if the 960px grid doesn't suit your needs.
+
+Use [1kbgrid.com](http://1kbgrid.com) or another grid generator for guidance on the various grid coordinates possible.
 
 See `templates/project/screen.sass` for an example.
 
@@ -27,17 +29,17 @@ See `templates/project/screen.sass` for an example.
 
 ### Available mixins
 
-`grid-container`
+`@include grid-container`
 
-`nested-grid-container`
+`@include nested-grid-container`
 
-`grid($grid-columns)`
+`@include grid($grid-columns)`
 
-`grid-prefix($grid-columns)`
+`@include grid-prefix($grid-columns)`
 
-`grid-suffix($grid-columns)`
+`@include grid-suffix($grid-columns)`
 
-`grid-full`
+`@include grid-full`
 
 ## License
 
