@@ -1,45 +1,50 @@
-@import compass
-
-//  Configure grid coordinates
-$grid-columns: 12
-$grid-pixels: 60px
-$grid-gutter-width: 20px
-
-@import grid-coordinates
+@import compass/reset
+@import compass/utilities
 
 body
   font: bold 14px helvetica, arial, sans-serif
   padding-top: 20px
+  
+// // Configure grid coordinates
+// $grid-columns: 16
+// $grid-pixels: 40px
+// $grid-gutter-width: 20px
+
+@import grid-coordinates
+
+@include grid-coordinates
 
 #header, #page, #footer
-  @include grid-container
+  @extend .grid-container
 
 #brand
-  @include grid(4)
+  @extend .grid-3
 
 #nav
-  @include grid(8)
+  @extend .grid-9
 
 #page-body
-  @include grid(8)
+  @extend .grid-8
   &.wide
-    @include grid-full
+    @extend .grid-full
 
 #page-sidebar
-  @include grid(4)
+  @extend .grid-4
 
-#footer-body
-  @include grid-full
+#footer .content
+  @extend .grid-full
 
 .common
-  background: #ddd
+  background: #444
+  color: #fff
   margin-bottom: 20px
   text-align: center
   
-#brand, #nav, #footer-body
+#brand, #nav, #page-body, #page-sidebar, #footer .content
   @extend .common
+
+#brand, #nav, #footer .content
   line-height: 100px
 
 #page-body, #page-sidebar
-  @extend .common
   line-height: 400px

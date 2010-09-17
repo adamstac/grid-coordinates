@@ -1,47 +1,47 @@
 @import "compass/utilities";
 
-//  How many grid columns would you like?
+// Configure grid coordinates
 $grid-columns: 12 !default;
-
-//  How many pixels wide would you like each column to be?
 $grid-pixels: 60px !default;
-
-//  How many pixels wide would you like the gutter to be?
 $grid-gutter-width: 20px !default;
 
-//  Set grid width
-$grid-width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width;
+@mixin grid-coordinates {
+  /* Grid-Coordinates by Adam Stacoviak
+   * Fork me: http://adamstac.com/grid-coordinates */
+  .grid-container {
+    margin: 0 auto;
+    overflow: hidden;
+    width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width; }
+  .nested-grid-container {
+    display: inline-block;
+    margin: {
+      left: -$grid-gutter-width / 2;
+      right: -$grid-gutter-width / 2; };
+    overflow: hidden;
+    width: auto; }
+  @for $i from 1 through $grid-columns {
+    .grid-#{$i} {
+      @include grid($i); } }
+  .grid-full {
+    @include grid($grid-columns); }
+  @for $i from 1 through $grid-columns - 1 {
+    .grid-prefix-#{$i} {
+      @include grid-prefix($i); } }
+  @for $i from 1 through $grid-columns - 1 {
+    .grid-suffix-#{$i} {
+      @include grid-suffix($i); } } }
 
 @mixin grid($grid-columns) {
-  @include column;
-  @include grid-width($grid-columns); }
-
-// Used internatlly to the extension only
-@mixin column {
+  @include grid-width($grid-columns);
   @include float-left;
   margin: 0 $grid-gutter-width / 2;
   overflow: hidden; }
 
-// Used internatlly to the extension only
 @mixin grid-width($grid-columns) {
   @if $grid-columns == 1 {
     width: $grid-pixels; }
   @else {
     width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width - $grid-gutter-width; } }
-
-// Mixins used to create, define and manipulate the grid
-@mixin grid-container {
-  margin: 0 auto;
-  overflow: hidden;
-  width: $grid-width; }
-
-@mixin nested-grid-container {
-  display: inline-block;
-  margin: {
-    left: -$grid-gutter-width / 2;
-    right: -$grid-gutter-width / 2; };
-  overflow: hidden;
-  width: auto; }
 
 @mixin grid-prefix($grid-columns) {
   @if $grid-columns == 1 {
@@ -54,6 +54,3 @@ $grid-width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width;
     padding-right: $grid-pixels + $grid-gutter-width; }
   @else {
     padding-right: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width; } }
-
-@mixin grid-full {
-  @include grid($grid-columns); }

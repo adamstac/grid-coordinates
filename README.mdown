@@ -2,7 +2,7 @@
 
 Grid Coordinates is a [Sass](http://sass-lang.com/) CSS Grid Framework Generator delivered as a [Compass](http://compass-style.org/) extension. This project was inspired by Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/) project.
 
-Grid Coordinates is quite simple. It sets up the styles for your CSS grid framework and even supports nested grids as well. It's also able to generate styles for grids of any size - you control the coordinates and it generates the styles.
+Grid Coordinates is quite simple. It fully leverages both classes and extends to set up the styles for your CSS grid framework. Grid Coordinates even supports nested grids and prefix and suffix features. It's also able to generate styles for grids of any size - you control the coordinates and it generates the styles.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Add `require 'grid-coordinates'` to your Compass config file.
 
 ## Usage
 
-The default grid-coordinates defaults have been set to create a 960px wide grid with 12 columns at 60px with a gutter of 20px. You can override these as needed in your project if the 960px grid doesn't suit your needs.
+Grid-coordinates defaults to the 960px grid with 12 columns (12 columns at 60px with a gutter of 20px). You can override these variables as needed in your project if this grid doesn't suit your needs.
 
 Use [1kbgrid.com](http://1kbgrid.com) or another grid generator for guidance on the various grid coordinates possible.
 
@@ -20,26 +20,32 @@ See `templates/project/screen.sass` for an example.
 
 ### Configure as needed and import
 
-    //  Configure grid coordinates
-    $grid-columns: 16
-    $grid-pixels: 40px
-    $grid-gutter-width: 20px
+    // Configure grid coordinates
+    $grid-columns: 12 !default
+    $grid-pixels: 60px !default
+    $grid-gutter-width: 20px !default
     
     @import grid-coordinates
+    
+    @include grid-coordinates
+    
+    ...
 
-### Available mixins
+### Available extends
 
-`@include grid-container`
+Use the extend classes in your HTML or use them to extend in your Sass stylesheets. For an example of this in use, see `templates/project`.
 
-`@include nested-grid-container`
+`@extend .grid-container`
 
-`@include grid($grid-columns)`
+`@extend .nested-grid-container`
 
-`@include grid-prefix($grid-columns)`
+`@extend .grid-4`
 
-`@include grid-suffix($grid-columns)`
+`@extend .grid-prefix-4`
 
-`@include grid-full`
+`@extend .grid-suffix-4`
+
+`@extend .grid-full`
 
 ## License
 
