@@ -30,6 +30,7 @@ $grid-gutter-width: 20px !default
       @extend .grid-block
   .grid-full
     @include grid($grid-columns)
+    @extend .grid-block
   @for $i from 1 through $grid-columns - 1
     .grid-prefix-#{$i}
       @include grid-prefix($i)
