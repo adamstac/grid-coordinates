@@ -2,7 +2,7 @@
 
 // Configure grid coordinates
 $grid-columns: 12 !default
-$grid-pixels: 60px !default
+$grid-width: 60px !default
 $grid-gutter-width: 20px !default
 
 @mixin grid-coordinates
@@ -12,7 +12,7 @@ $grid-gutter-width: 20px !default
   .grid-container
     margin: 0 auto
     overflow: hidden
-    width: ($grid-columns * $grid-pixels) + ($grid-columns * $grid-gutter-width)
+    width: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
   .nested-grid-container
     display: inline-block
     margin:
@@ -20,9 +20,14 @@ $grid-gutter-width: 20px !default
       right: -$grid-gutter-width / 2
     overflow: hidden
     width: auto
+  .grid-block
+    @include float-left
+    overflow: hidden
+    margin: 0 ($grid-gutter-width / 2)
   @for $i from 1 through $grid-columns
     .grid-#{$i}
       @include grid($i)
+      @extend .grid-block
   .grid-full
     @include grid($grid-columns)
   @for $i from 1 through $grid-columns - 1
@@ -34,24 +39,21 @@ $grid-gutter-width: 20px !default
 
 @mixin grid($grid-columns)
   @include grid-width($grid-columns)
-  @include float-left
-  margin: 0 $grid-gutter-width / 2
-  overflow: hidden
 
 @mixin grid-width($grid-columns)
   @if $grid-columns == 1
-    width: $grid-pixels
+    width: $grid-width
   @else
-    width: ($grid-columns * $grid-pixels) + (($grid-columns * $grid-gutter-width) - $grid-gutter-width)
+    width: ($grid-columns * $grid-width) + (($grid-columns * $grid-gutter-width) - $grid-gutter-width)
 
 @mixin grid-prefix($grid-columns)
   @if $grid-columns == 1
-    padding-left: $grid-pixels + $grid-gutter-width
+    padding-left: $grid-width + $grid-gutter-width
   @else
-    padding-left: ($grid-columns * $grid-pixels) + ($grid-columns * $grid-gutter-width)
+    padding-left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 @mixin grid-suffix($grid-columns)
   @if $grid-columns == 1
-    padding-right: $grid-pixels + $grid-gutter-width
+    padding-right: $grid-width + $grid-gutter-width
   @else
-    padding-right: ($grid-columns * $grid-pixels) + ($grid-columns * $grid-gutter-width)
+    padding-right: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
