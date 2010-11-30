@@ -6,76 +6,73 @@ $grid-width: 60px !default
 $grid-gutter-width: 20px !default
 $overflow-allowed: false !default
 
-@mixin grid-coordinates
-  /*
-    Grid-Coordinates by Adam Stacoviak
-    Fork me: http://adamstac.com/grid-coordinates */
+=grid-coordinates
   .grid-container
-    @include grid-container
+    +grid-container
   .nested-grid-container
-    @include nested-grid-container
+    +nested-grid-container
   .grid-block
-    @include grid-block
+    +grid-block
   @for $i from 1 through $grid-columns
     .grid-#{$i}
-      @include grid($i)
+      +grid($i)
   .grid-full
-    @include grid-full
+    +grid-full
   @for $i from 1 through $grid-columns - 1
     .grid-prefix-#{$i}
-      @include grid-prefix($i)
+      +grid-prefix($i)
   @for $i from 1 through $grid-columns - 1
     .grid-suffix-#{$i}
-      @include grid-suffix($i)
+      +grid-suffix($i)
 
-@mixin grid-container
+=grid-container
   margin: 0 auto
   @if $overflow-allowed
-    @include pie-clearfix
+    +pie-clearfix
   @else
-    @include clearfix
+    +clearfix
   width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
 
-@mixin nested-grid-container
+=nested-grid-container
   display: inline-block
   margin:
     left: -$grid-gutter-width / 2
     right: -$grid-gutter-width / 2
   @if $overflow-allowed
-    @include pie-clearfix
+    +pie-clearfix
   @else
-    @include clearfix
+    +clearfix
   width: auto
 
-@mixin grid-block
-  @include float-left
+=grid-block
+  +float-left
   @if $overflow-allowed
-    @include pie-clearfix
+    +pie-clearfix
   @else
-    @include clearfix
+    +clearfix
   margin: 0 $grid-gutter-width / 2
 
-@mixin grid($grid-columns)
-  @include grid-width($grid-columns)
-  @include grid-block
+=grid($grid-columns)
+  +grid-width($grid-columns)
+  +grid-block
 
-@mixin grid-width($grid-columns)
+=grid-width($grid-columns)
   @if $grid-columns == 1
     width: $grid-width
   @else
-    width: ($grid-columns * $grid-width) + (($grid-columns * $grid-gutter-width) - $grid-gutter-width)
+    width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width - $grid-gutter-width
 
-@mixin grid-full
-  @include grid($grid-columns)
+=grid-full
+  +grid($grid-columns)
 
-@mixin grid-prefix($grid-columns)
+=grid-prefix($grid-columns)
   @if $grid-columns == 1
     padding-left: $grid-width + $grid-gutter-width
   @else
-    padding-left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
+    padding-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
 
-@mixin grid-suffix($grid-columns)
+=grid-suffix($grid-columns)
   @if $grid-columns == 1
     padding-right: $grid-width + $grid-gutter-width
   @else
-    padding-right: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
+    padding-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width

@@ -7,8 +7,6 @@ $grid-gutter-width: 20px !default;
 $overflow-allowed: false !default;
 
 @mixin grid-coordinates {
-  /* Grid-Coordinates by Adam Stacoviak
-   * Fork me: http://adamstac.com/grid-coordinates */
   .grid-container {
     @include grid-container; }
   .nested-grid-container {
@@ -45,7 +43,7 @@ $overflow-allowed: false !default;
   @else {
     @include clearfix; }
   width: auto; }
-    
+
 @mixin grid-block {
   @include float-left;
   @if $overflow-allowed {
