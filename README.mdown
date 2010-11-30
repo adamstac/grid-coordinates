@@ -24,14 +24,34 @@ See `templates/project/screen.sass` for an example.
     $grid-columns: 12 !default
     $grid-pixels: 60px !default
     $grid-gutter-width: 20px !default
+    $overflow-allowed: false !default
     
     @import grid-coordinates
     
+    // Only needed if you're using the classes instead of the mixins
     @include grid-coordinates
     
     ...
 
-### Available extends
+The `$overflow-allowed` setting controls which of Compass' two clearfix mixins is used. The default setting, false, will clip any content that overflows a grid block. If you need overflowing content to remain visible (i.e., a drop-down menu inside a grid block) change this setting the true.
+
+### Using the Mixins
+
+Use these mixins in your Sass stylesheets. For an example of this in use, see `templates/project`.
+
+`@include grid-container`
+
+`@include nested-grid-container`
+
+`@include grid(4)`
+
+`@include grid-prefix(4)`
+
+`@include grid-suffix(4)`
+
+`@include grid-full`
+
+### Using the Classes
 
 Use the extend classes in your HTML or use them to extend in your Sass stylesheets. For an example of this in use, see `templates/project`.
 
