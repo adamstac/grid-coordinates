@@ -3,7 +3,7 @@
   %head
     %title Grid Coordinates - Sample
     %link{:href => "screen.css", :media => "all", :rel => "stylesheet", :type => "text/css"}
-  %body{:id => body_id, :class => body_class}
+  %body
     #header
       #brand
         .content
@@ -11,13 +11,20 @@
       #nav
         .content
           %p nav
-    #page
-      #page-body
+    #mixins
+      .body
         .content
-          %p page-body
-      #page-sidebar
+          %p mixins body
+      .sidebar
         .content
-          %p page-sidebar
+          %p mixins sidebar
+    #extends
+      .body
+        .content
+          %p extends body
+      .sidebar
+        .content
+          %p extends sidebar
     #footer
       .content
         %p footer

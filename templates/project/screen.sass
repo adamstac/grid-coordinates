@@ -9,42 +9,54 @@ body
 // $grid-columns: 16
 // $grid-pixels: 40px
 // $grid-gutter-width: 20px
+// $overflow-allowed: true
 
 @import grid-coordinates
 
 @include grid-coordinates
 
-#header, #page, #footer
+#header, #mixins, #footer
+  @include grid-container
+
+#extends
   @extend .grid-container
 
 #brand
-  @extend .grid-3
+  @include grid(3)
 
 #nav
-  @extend .grid-9
+  @include grid(9)
 
-#page-body
-  @extend .grid-8
-  &.wide
-    @extend .grid-full
+#mixins
+  .body
+    @include grid(8)
+    &.wide
+      @include grid-full
+  .sidebar
+    @include grid(4)
 
-#page-sidebar
-  @extend .grid-4
+#extends
+  .body
+    @extend .grid-8
+    &.wide
+      @extend .grid-full
+  .sidebar
+    @extend .grid-4
 
 #footer .content
-  @extend .grid-full
+  @include grid-full
 
 .common
   background: #444
   color: #fff
-  margin-bottom: 20px
+  margin-bottom: 20px !important
   text-align: center
   
-#brand, #nav, #page-body, #page-sidebar, #footer .content
+#brand, #nav, .body, .sidebar, #footer .content
   @extend .common
 
 #brand, #nav, #footer .content
   line-height: 100px
 
-#page-body, #page-sidebar
+.body, .sidebar
   line-height: 400px

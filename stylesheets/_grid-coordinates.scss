@@ -4,32 +4,22 @@
 $grid-columns: 12 !default;
 $grid-width: 60px !default;
 $grid-gutter-width: 20px !default;
+$overflow-allowed: false !default;
 
 @mixin grid-coordinates {
   /* Grid-Coordinates by Adam Stacoviak
    * Fork me: http://adamstac.com/grid-coordinates */
   .grid-container {
-    margin: 0 auto;
-    overflow: hidden;
-    width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
+    @include grid-container; }
   .nested-grid-container {
-    display: inline-block;
-    margin: {
-      left: -$grid-gutter-width / 2;
-      right: -$grid-gutter-width / 2; };
-    overflow: hidden;
-    width: auto; }
+    @include nested-grid-container; }
   .grid-block {
-    @include float-left;
-    overflow: hidden;
-    margin: 0 $grid-gutter-width / 2; }
+    @include grid-block; }
   @for $i from 1 through $grid-columns {
     .grid-#{$i} {
-      @include grid($i);
-      @extend .grid-block; } }
+      @include grid($i); } }
   .grid-full {
-    @include grid($grid-columns);
-    @extend .grid-block; }
+    @include grid-full; }
   @for $i from 1 through $grid-columns - 1 {
     .grid-prefix-#{$i} {
       @include grid-prefix($i); } }
@@ -37,14 +27,45 @@ $grid-gutter-width: 20px !default;
     .grid-suffix-#{$i} {
       @include grid-suffix($i); } } }
 
+@mixin grid-container {
+  margin: 0 auto;
+  @if $overflow-allowed {
+    @include pie-clearfix; }
+  @else {
+    @include clearfix; }
+  width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
+
+@mixin nested-grid-container {
+  display: inline-block;
+  margin: {
+    left: -$grid-gutter-width / 2;
+    right: -$grid-gutter-width / 2; };
+  @if $overflow-allowed {
+    @include pie-clearfix; }
+  @else {
+    @include clearfix; }
+  width: auto; }
+    
+@mixin grid-block {
+  @include float-left;
+  @if $overflow-allowed {
+    @include pie-clearfix; }
+  @else {
+    @include clearfix; }
+  margin: 0 $grid-gutter-width / 2; }
+
 @mixin grid($grid-columns) {
-  @include grid-width($grid-columns); }
+  @include grid-width($grid-columns);
+  @include grid-block; }
 
 @mixin grid-width($grid-columns) {
   @if $grid-columns == 1 {
     width: $grid-width; }
   @else {
     width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width - $grid-gutter-width; } }
+
+@mixin grid-full {
+  @include grid($grid-columns); }
 
 @mixin grid-prefix($grid-columns) {
   @if $grid-columns == 1 {
