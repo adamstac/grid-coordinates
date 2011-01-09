@@ -1,62 +1,26 @@
-@import compass/reset
-@import compass/utilities
-
-body
-  font: bold 14px helvetica, arial, sans-serif
-  padding-top: 20px
-  
-// // Configure grid coordinates
-// $grid-columns: 16
-// $grid-pixels: 40px
-// $grid-gutter-width: 20px
-// $overflow-allowed: true
+// Configure grid coordinates
+$grid-columns: 24
+$grid-width: 30px
+$grid-gutter-width: 10px
 
 @import grid-coordinates
 
-@include grid-coordinates
++grid-coordinates
 
-#header, #mixins, #footer
-  @include grid-container
-
-#extends
+#header, #page, #footer
   @extend .grid-container
+  +box-sizing(border-box)
 
-#brand
-  @include grid(3)
+#header
+  h1
+    @extend .grid-6
+    @extend .grid-suffix-2
+  #nav-main
+    @extend .grid-16
 
-#nav
-  @include grid(9)
-
-#mixins
-  .body
-    @include grid(8)
-    &.wide
-      @include grid-full
-  .sidebar
-    @include grid(4)
-
-#extends
-  .body
-    @extend .grid-8
-    &.wide
-      @extend .grid-full
-  .sidebar
-    @extend .grid-4
-
-#footer .content
-  @include grid-full
-
-.common
-  background: #444
-  color: #fff
-  margin-bottom: 20px !important
-  text-align: center
-  
-#brand, #nav, .body, .sidebar, #footer .content
-  @extend .common
-
-#brand, #nav, #footer .content
-  line-height: 100px
-
-.body, .sidebar
-  line-height: 400px
+#page
+  #content
+    @extend .grid-17
+    @extend .grid-suffix-1
+  #sidebar
+    @extend .grid-6

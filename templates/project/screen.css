@@ -1,63 +1,4 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
-
-body {
-  line-height: 1;
-  color: black;
-  background: white;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-q, blockquote {
-  quotes: "" "";
-}
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-}
-
-a img {
-  border: none;
-}
-
-body {
-  font: bold 14px helvetica, arial, sans-serif;
-  padding-top: 20px;
-}
-
-/* Grid-Coordinates by Adam Stacoviak
- * Fork me: http://adamstac.com/grid-coordinates */
-.grid-container, #extends {
+.grid-container, #header, #page, #footer {
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
@@ -66,8 +7,8 @@ body {
 
 .nested-grid-container {
   display: inline-block;
-  margin-left: -10px;
-  margin-right: -10px;
+  margin-left: -5px;
+  margin-right: -5px;
   overflow: hidden;
   *zoom: 1;
   width: auto;
@@ -78,284 +19,414 @@ body {
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-1 {
-  width: 60px;
+  width: 30px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-2 {
-  width: 140px;
+  width: 70px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-3 {
-  width: 220px;
+  width: 110px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
-.grid-4, #extends .sidebar {
-  width: 300px;
+.grid-4 {
+  width: 150px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-5 {
-  width: 380px;
+  width: 190px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
-.grid-6 {
-  width: 460px;
+.grid-6, #header h1, #page #sidebar {
+  width: 230px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-7 {
-  width: 540px;
+  width: 270px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
-.grid-8, #extends .body {
-  width: 620px;
+.grid-8 {
+  width: 310px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-9 {
-  width: 700px;
+  width: 350px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-10 {
-  width: 780px;
+  width: 390px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-11 {
-  width: 860px;
+  width: 430px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 .grid-12 {
-  width: 940px;
+  width: 470px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
-.grid-full, #extends .body.wide {
-  width: 940px;
+.grid-13 {
+  width: 510px;
   display: inline;
   float: left;
   overflow: hidden;
   *zoom: 1;
-  margin: 0 10px;
+  margin: 0 5px;
+}
+
+.grid-14 {
+  width: 550px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-15 {
+  width: 590px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-16, #header #nav-main {
+  width: 630px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-17, #page #content {
+  width: 670px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-18 {
+  width: 710px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-19 {
+  width: 750px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-20 {
+  width: 790px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-21 {
+  width: 830px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-22 {
+  width: 870px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-23 {
+  width: 910px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-24 {
+  width: 950px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.grid-full {
+  width: 950px;
+  display: inline;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  margin: 0 5px;
 }
 
 .grid-prefix-1 {
-  padding-left: 80px;
+  padding-left: 40px;
 }
 
 .grid-prefix-2 {
-  padding-left: 160px;
+  padding-left: 80px;
 }
 
 .grid-prefix-3 {
-  padding-left: 240px;
+  padding-left: 120px;
 }
 
 .grid-prefix-4 {
-  padding-left: 320px;
+  padding-left: 160px;
 }
 
 .grid-prefix-5 {
-  padding-left: 400px;
+  padding-left: 200px;
 }
 
 .grid-prefix-6 {
-  padding-left: 480px;
+  padding-left: 240px;
 }
 
 .grid-prefix-7 {
-  padding-left: 560px;
+  padding-left: 280px;
 }
 
 .grid-prefix-8 {
-  padding-left: 640px;
+  padding-left: 320px;
 }
 
 .grid-prefix-9 {
-  padding-left: 720px;
+  padding-left: 360px;
 }
 
 .grid-prefix-10 {
-  padding-left: 800px;
+  padding-left: 400px;
 }
 
 .grid-prefix-11 {
+  padding-left: 440px;
+}
+
+.grid-prefix-12 {
+  padding-left: 480px;
+}
+
+.grid-prefix-13 {
+  padding-left: 520px;
+}
+
+.grid-prefix-14 {
+  padding-left: 560px;
+}
+
+.grid-prefix-15 {
+  padding-left: 600px;
+}
+
+.grid-prefix-16 {
+  padding-left: 640px;
+}
+
+.grid-prefix-17 {
+  padding-left: 680px;
+}
+
+.grid-prefix-18 {
+  padding-left: 720px;
+}
+
+.grid-prefix-19 {
+  padding-left: 760px;
+}
+
+.grid-prefix-20 {
+  padding-left: 800px;
+}
+
+.grid-prefix-21 {
+  padding-left: 840px;
+}
+
+.grid-prefix-22 {
   padding-left: 880px;
 }
 
-.grid-suffix-1 {
+.grid-prefix-23 {
+  padding-left: 920px;
+}
+
+.grid-suffix-1, #page #content {
+  padding-right: 40px;
+}
+
+.grid-suffix-2, #header h1 {
   padding-right: 80px;
 }
 
-.grid-suffix-2 {
-  padding-right: 160px;
-}
-
 .grid-suffix-3 {
-  padding-right: 240px;
+  padding-right: 120px;
 }
 
 .grid-suffix-4 {
-  padding-right: 320px;
+  padding-right: 160px;
 }
 
 .grid-suffix-5 {
-  padding-right: 400px;
+  padding-right: 200px;
 }
 
 .grid-suffix-6 {
-  padding-right: 480px;
+  padding-right: 240px;
 }
 
 .grid-suffix-7 {
-  padding-right: 560px;
+  padding-right: 280px;
 }
 
 .grid-suffix-8 {
-  padding-right: 640px;
+  padding-right: 320px;
 }
 
 .grid-suffix-9 {
-  padding-right: 720px;
+  padding-right: 360px;
 }
 
 .grid-suffix-10 {
-  padding-right: 800px;
+  padding-right: 400px;
 }
 
 .grid-suffix-11 {
+  padding-right: 440px;
+}
+
+.grid-suffix-12 {
+  padding-right: 480px;
+}
+
+.grid-suffix-13 {
+  padding-right: 520px;
+}
+
+.grid-suffix-14 {
+  padding-right: 560px;
+}
+
+.grid-suffix-15 {
+  padding-right: 600px;
+}
+
+.grid-suffix-16 {
+  padding-right: 640px;
+}
+
+.grid-suffix-17 {
+  padding-right: 680px;
+}
+
+.grid-suffix-18 {
+  padding-right: 720px;
+}
+
+.grid-suffix-19 {
+  padding-right: 760px;
+}
+
+.grid-suffix-20 {
+  padding-right: 800px;
+}
+
+.grid-suffix-21 {
+  padding-right: 840px;
+}
+
+.grid-suffix-22 {
   padding-right: 880px;
 }
 
-#header, #mixins, #footer {
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-  width: 960px;
-}
-
-#brand {
-  width: 220px;
-  display: inline;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0 10px;
-}
-
-#nav {
-  width: 700px;
-  display: inline;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0 10px;
-}
-
-#mixins .body {
-  width: 620px;
-  display: inline;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0 10px;
-}
-#mixins .body.wide {
-  width: 940px;
-  display: inline;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0 10px;
-}
-#mixins .sidebar {
-  width: 300px;
-  display: inline;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0 10px;
-}
-
-#footer .content {
-  width: 940px;
-  display: inline;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  margin: 0 10px;
-}
-
-.common, #brand, #nav, .body, .sidebar, #footer .content {
-  background: #444444;
-  color: white;
-  margin-bottom: 20px !important;
-  text-align: center;
-}
-
-#brand, #nav, #footer .content {
-  line-height: 100px;
-}
-
-.body, .sidebar {
-  line-height: 400px;
+.grid-suffix-23 {
+  padding-right: 920px;
 }
