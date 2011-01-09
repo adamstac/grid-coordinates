@@ -2,70 +2,70 @@
 
 Grid Coordinates is a [Sass](http://sass-lang.com/) CSS Grid Framework Generator delivered as a [Compass](http://compass-style.org/) extension. This project was inspired by Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/) project.
 
-Grid Coordinates is quite simple. It fully leverages both classes and extends to set up the styles for your CSS grid framework. Grid Coordinates even supports nested grids and prefix and suffix features. It's also able to generate styles for grids of any size - you control the coordinates and it generates the styles.
+Grid Coordinates is quite simple. It fully leverages classes, extends and even mixins (if that's your preference) to set up the styles for your CSS grid framework. Grid Coordinates even supports nested grids, prefix and suffix grid features. Grid Coordinates is capable of generating styles for grids of any size - you control the coordinates and it generates the styles.
 
 ## Installation
 
-`sudo gem install grid-coordinates`
+`gem install grid-coordinates`
 
-Add `require 'grid-coordinates'` to your Compass config file.
+Then add `require 'grid-coordinates'` to your Compass config file.
 
 ## Usage
 
 Grid-coordinates defaults to the 960px grid with 12 columns (12 columns at 60px with a gutter of 20px). You can override these variables as needed in your project if this grid doesn't suit your needs.
 
-Use [1kbgrid.com](http://1kbgrid.com) or another grid generator for guidance on the various grid coordinates possible.
+Use [1kbgrid.com](http://1kbgrid.com) or another grid generator for guidance on configuring your grid settings.
 
-See `templates/project/screen.sass` for an example.
+See `templates/project/screen.sass` for an example of how to use this as well the output CSS.
 
 ### Configure as needed and import
 
     // Configure grid coordinates
-    $grid-columns: 12 !default
-    $grid-width: 60px !default
-    $grid-gutter-width: 20px !default
-    $overflow-allowed: false !default
+    $grid-columns: 12
+    $grid-width: 60px
+    $grid-gutter-width: 20px
+    $overflow-allowed: false
     
     @import grid-coordinates
     
-    // Only needed if you're using the classes instead of the mixins
-    @include grid-coordinates
+    // Only needed if you are using the classes using `@extend` instead of the mixins
+    +grid-coordinates
     
     ...
 
-The `$overflow-allowed` setting controls which of Compass' two clearfix mixins is used. The default setting, false, will clip any content that overflows a grid block. If you need overflowing content to remain visible (i.e., a drop-down menu inside a grid block) change this setting the true.
+The `$overflow-allowed` setting controls which of Compass' two clearfix mixins to be used, `+clearfix` or `+pie-clearfix`. The default setting `false` will clip any content that overflows a grid block. If you need overflowing content to remain visible (i.e., a drop-down menu inside a grid block) update this setting to `true`.
+
+### Using the classes and `@extend`
+
+When you use the mixin `+grid-coordinates` you are able to leverage the classes in your HTML or use the Sass `extend` option to extend the defined classes in your Sass stylesheets. For an example of this in use, see `templates/project`.
+
+`@extend grid-container`
+
+`@extend nested-grid-container`
+
+`@extend grid([columns])`
+
+`@extend grid-prefix([columns])`
+
+`@extend grid-suffix([columns])`
+
+`@extend grid-full`
 
 ### Using the Mixins
 
-Use these mixins in your Sass stylesheets. For an example of this in use, see `templates/project`.
+Use these mixins in your Sass stylesheets. Keep in mind that when you go the route of mixins you are replicated much code in your output CSS. I advise you to learn the [Sass extend concept](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) and use that method vs mixins. Your output CSS code with thank you.
 
-`@include grid-container`
+`+grid-container`
 
-`@include nested-grid-container`
+`+nested-grid-container`
 
-`@include grid(4)`
+`+grid([columns])`
 
-`@include grid-prefix(4)`
+`+grid-prefix([columns])`
 
-`@include grid-suffix(4)`
+`+grid-suffix([columns])`
 
-`@include grid-full`
-
-### Using the Classes
-
-Use the extend classes in your HTML or use them to extend in your Sass stylesheets. For an example of this in use, see `templates/project`.
-
-`@extend .grid-container`
-
-`@extend .nested-grid-container`
-
-`@extend .grid-4`
-
-`@extend .grid-prefix-4`
-
-`@extend .grid-suffix-4`
-
-`@extend .grid-full`
+`+grid-full`
 
 ## License
 
