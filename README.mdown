@@ -22,7 +22,7 @@ See `templates/project/screen.sass` for an example.
 
     // Configure grid coordinates
     $grid-columns: 12 !default
-    $grid-pixels: 60px !default
+    $grid-width: 60px !default
     $grid-gutter-width: 20px !default
     $overflow-allowed: false !default
     
