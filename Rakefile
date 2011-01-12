@@ -19,7 +19,7 @@ namespace :gem do
  
   desc "Build and release the gem"
   task :release => :build do
-    puts "gem push grid-coordinates-#{GridCoordinates::VERSION}.gem"
+    system "gem push grid-coordinates-#{GridCoordinates::VERSION}.gem"
   end
   
 end
