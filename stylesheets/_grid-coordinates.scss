@@ -4,7 +4,7 @@
 $grid-columns: 12 !default;
 $grid-width: 60px !default;
 $grid-gutter-width: 20px !default;
-$overflow-allowed: false !default;
+$overflow-allowed: true !default;
 
 @mixin grid-coordinates {
   .grid-container {
@@ -23,47 +23,51 @@ $overflow-allowed: false !default;
       @include grid-prefix($i); } }
   @for $i from 1 through $grid-columns - 1 {
     .grid-suffix-#{$i} {
-      @include grid-suffix($i); } } }
+      @include grid-suffix($i); } }
+  @for $i from 1 through $grid-columns - 1 {
+    .grid-push-#{$i} {
+      @include grid-push($i); } }
+  @for $i from 1 through $grid-columns - 1 {
+    .grid-pull-#{$i} {
+      @include grid-pull($i); } } }
 
-@mixin grid-container {
-  margin: 0 auto;
-  @if $overflow-allowed {
+@mixin overflow-allowed($boolean: $overflow-allowed) {
+  @if $boolean {
     @include pie-clearfix; }
   @else {
-    @include clearfix; }
+    @include clearfix; } }
+
+@mixin grid-container {
+  @include overflow-allowed;
+  margin: 0 auto;
   width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
 
 @mixin nested-grid-container {
+  @include overflow-allowed;
   display: inline-block;
   margin: {
     left: -$grid-gutter-width / 2;
     right: -$grid-gutter-width / 2; };
-  @if $overflow-allowed {
-    @include pie-clearfix; }
-  @else {
-    @include clearfix; }
   width: auto; }
 
 @mixin grid-block {
   @include float-left;
-  @if $overflow-allowed {
-    @include pie-clearfix; }
-  @else {
-    @include clearfix; }
+  @include overflow-allowed;
   margin: 0 $grid-gutter-width / 2; }
 
 @mixin grid($grid-columns) {
+  position: relative;
   @include grid-width($grid-columns);
   @include grid-block; }
+
+@mixin grid-full {
+  @include grid($grid-columns); }
 
 @mixin grid-width($grid-columns) {
   @if $grid-columns == 1 {
     width: $grid-width; }
   @else {
     width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width - $grid-gutter-width; } }
-
-@mixin grid-full {
-  @include grid($grid-columns); }
 
 @mixin grid-prefix($grid-columns) {
   @if $grid-columns == 1 {
@@ -76,3 +80,15 @@ $overflow-allowed: false !default;
     padding-right: $grid-width + $grid-gutter-width; }
   @else {
     padding-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
+
+@mixin grid-push($grid-columns) {
+  @if $grid-columns == 1 {
+    left: $grid-width + $grid-gutter-width; }
+  @else {
+    left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
+
+@mixin grid-pull($grid-columns) {
+  @if $grid-columns == 1 {
+    left: -$grid-width + $grid-gutter-width; }
+  @else {
+    left: -$grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
