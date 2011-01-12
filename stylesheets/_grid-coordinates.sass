@@ -4,7 +4,7 @@
 $grid-columns: 12 !default
 $grid-width: 60px !default
 $grid-gutter-width: 20px !default
-$overflow-allowed: false !default
+$overflow-allowed: true !default
 
 =grid-coordinates
   .grid-container
@@ -31,31 +31,28 @@ $overflow-allowed: false !default
     .grid-pull-#{$i}
       +grid-pull($i)
 
-=grid-container
-  margin: 0 auto
-  @if $overflow-allowed
+=overflow-allowed($boolean: $overflow-allowed)
+  @if $boolean
     +pie-clearfix
   @else
     +clearfix
+
+=grid-container
+  +overflow-allowed
+  margin: 0 auto
   width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
 
 =nested-grid-container
+  +overflow-allowed
   display: inline-block
   margin:
     left: -$grid-gutter-width / 2
     right: -$grid-gutter-width / 2
-  @if $overflow-allowed
-    +pie-clearfix
-  @else
-    +clearfix
   width: auto
 
 =grid-block
   +float-left
-  @if $overflow-allowed
-    +pie-clearfix
-  @else
-    +clearfix
+  +overflow-allowed
   margin: 0 $grid-gutter-width / 2
 
 =grid($grid-columns)
