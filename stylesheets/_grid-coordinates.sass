@@ -8,26 +8,39 @@ $overflow: true !default
 $classes-only: false !default
 
 =grid-coordinates
-  @if $classes-only
-    @if $overflow
-      .grid-pie-clearfix
-        +pie-clearfix
-    @else
-      .grid-clearfix
-        +clearfix
+  @if $overflow
+    .grid-pie-clearfix
+      +pie-clearfix
+  @else
+    .grid-clearfix
+      +clearfix
   .grid-container
-    +grid-container($overflow, $classes-only)
+    +grid-container-base
+    @if $overflow
+      @extend .grid-pie-clearfix
+    @else
+      @extend .grid-clearfix
   .nested-grid-container
-    +nested-grid-container($overflow, $classes-only)
+    +nested-grid-container-base
+    @if $overflow
+      @extend .grid-pie-clearfix
+    @else
+      @extend .grid-clearfix
   .grid-block
-    +grid-block($overflow, $classes-only)
+    +grid-block-base
+    @if $overflow
+      @extend .grid-pie-clearfix
+    @else
+      @extend .grid-clearfix
   .grid-full
-    +grid-full($overflow, $classes-only)
+    +grid-base($grid-columns)
+    @extend .grid-block
 
   // Loops
   @for $i from 1 through $grid-columns
     .grid-#{$i}
-      +grid($i, $overflow, $classes-only)
+      +grid-base($i)
+      @extend .grid-block
   @for $i from 1 through $grid-columns - 1
     .grid-prefix-#{$i}
       +grid-prefix($i)
@@ -75,16 +88,21 @@ $classes-only: false !default
   +nested-grid-container-base
 
 // Grid Block
-
-=grid-block($overflow, $classes-only)
-  +overflow($overflow, $classes-only)
+=grid-block-base
   +float-left
   position: relative
   margin: 0 $grid-gutter-width / 2
 
+=grid-block($overflow, $classes-only)
+  +grid-block-base
+  +overflow($overflow, $classes-only)
+
 // Grid
-=grid($grid-columns, $overflow, $classes-only)
+=grid-base($grid-columns)
   +grid-width($grid-columns)
+
+=grid($grid-columns, $overflow, $classes-only)
+  +grid-base($grid-columns)
   @if $classes-only
     @extend .grid-block
   @else

@@ -8,25 +8,38 @@ $overflow: true !default;
 $classes-only: false !default;
 
 @mixin grid-coordinates {
-  @if $classes-only {
-    @if $overflow {
-      .grid-pie-clearfix {
-        @include pie-clearfix; } }
-    @else {
-      .grid-clearfix {
-        @include clearfix; } } }
+  @if $overflow {
+    .grid-pie-clearfix {
+      @include pie-clearfix; } }
+  @else {
+    .grid-clearfix {
+      @include clearfix; } }
   .grid-container {
-    @include grid-container($overflow, $classes-only); }
+    @include grid-container-base;
+    @if $overflow {
+      @extend .grid-pie-clearfix; }
+    @else {
+      @extend .grid-clearfix; } }
   .nested-grid-container {
-    @include nested-grid-container($overflow, $classes-only); }
+    @include nested-grid-container-base;
+    @if $overflow {
+      @extend .grid-pie-clearfix; }
+    @else {
+      @extend .grid-clearfix; } }
   .grid-block {
-    @include grid-block($overflow, $classes-only); }
+    @include grid-block-base;
+    @if $overflow {
+      @extend .grid-pie-clearfix; }
+    @else {
+      @extend .grid-clearfix; } }
   .grid-full {
-    @include grid-full($overflow, $classes-only); }
+    @include grid-base($grid-columns);
+    @extend .grid-block; }
   // Loops
   @for $i from 1 through $grid-columns {
     .grid-#{$i} {
-      @include grid($i, $overflow, $classes-only); } }
+      @include grid-base($i);
+      @extend .grid-block; } }
   @for $i from 1 through $grid-columns - 1 {
     .grid-prefix-#{$i} {
       @include grid-prefix($i); } }
@@ -74,16 +87,21 @@ $classes-only: false !default;
   @include nested-grid-container-base; }
 
 // Grid Block
-
-@mixin grid-block($overflow, $classes-only) {
-  @include overflow($overflow, $classes-only);
+@mixin grid-block-base {
   @include float-left;
   position: relative;
   margin: 0 $grid-gutter-width / 2; }
 
+@mixin grid-block($overflow, $classes-only) {
+  @include grid-block-base;
+  @include overflow($overflow, $classes-only); }
+
 // Grid
+@mixin grid-base($grid-columns) {
+  @include grid-width($grid-columns); }
+
 @mixin grid($grid-columns, $overflow, $classes-only) {
-  @include grid-width($grid-columns);
+  @include grid-base($grid-columns);
   @if $classes-only {
     @extend .grid-block; }
   @else {
