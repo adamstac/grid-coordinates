@@ -4,20 +4,29 @@
 $grid-columns: 12 !default;
 $grid-width: 60px !default;
 $grid-gutter-width: 20px !default;
-$overflow-allowed: true !default;
+$overflow: true !default;
+$classes-only: false !default;
 
 @mixin grid-coordinates {
+  @if $classes-only {
+    @if $overflow {
+      .grid-pie-clearfix {
+        @include pie-clearfix; } }
+    @else {
+      .grid-clearfix {
+        @include clearfix; } } }
   .grid-container {
-    @include grid-container; }
+    @include grid-container($overflow, $classes-only); }
   .nested-grid-container {
-    @include nested-grid-container; }
+    @include nested-grid-container($overflow, $classes-only); }
   .grid-block {
-    @include grid-block; }
+    @include grid-block($overflow, $classes-only); }
+  .grid-full {
+    @include grid-full($overflow, $classes-only); }
+  // Loops
   @for $i from 1 through $grid-columns {
     .grid-#{$i} {
-      @include grid($i); } }
-  .grid-full {
-    @include grid-full; }
+      @include grid($i, $overflow, $classes-only); } }
   @for $i from 1 through $grid-columns - 1 {
     .grid-prefix-#{$i} {
       @include grid-prefix($i); } }
@@ -31,38 +40,59 @@ $overflow-allowed: true !default;
     .grid-pull-#{$i} {
       @include grid-pull($i); } } }
 
-@mixin overflow-allowed($boolean: $overflow-allowed) {
-  @if $boolean {
-    @include pie-clearfix; }
+@mixin overflow($overflow, $classes-only) {
+  @if $overflow {
+    @if $classes-only {
+      @extend .grid-pie-clearfix; }
+    @else {
+      @include pie-clearfix; } }
   @else {
-    @include clearfix; } }
+    @if $classes-only {
+      @extend .grid-clearfix; }
+    @else {
+      @include clearfix; } } }
 
-@mixin grid-container {
-  @include overflow-allowed;
+// Grid Container
+@mixin grid-container-base {
   margin: 0 auto;
   width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
 
-@mixin nested-grid-container {
-  @include overflow-allowed;
+@mixin grid-container($overflow, $classes-only) {
+  @include overflow($overflow, $classes-only);
+  @include grid-container-base; }
+
+// Nested Container
+@mixin nested-grid-container-base {
   display: inline-block;
   margin: {
     left: -$grid-gutter-width / 2;
     right: -$grid-gutter-width / 2; };
   width: auto; }
 
-@mixin grid-block {
+@mixin nested-grid-container($overflow, $classes-only) {
+  @include overflow($overflow, $classes-only);
+  @include nested-grid-container-base; }
+
+// Grid Block
+
+@mixin grid-block($overflow, $classes-only) {
+  @include overflow($overflow, $classes-only);
   @include float-left;
-  @include overflow-allowed;
+  position: relative;
   margin: 0 $grid-gutter-width / 2; }
 
-@mixin grid($grid-columns) {
-  position: relative;
+// Grid
+@mixin grid($grid-columns, $overflow, $classes-only) {
   @include grid-width($grid-columns);
-  @include grid-block; }
+  @if $classes-only {
+    @extend .grid-block; }
+  @else {
+    @include grid-block($overflow, $classes-only); } }
 
-@mixin grid-full {
-  @include grid($grid-columns); }
+@mixin grid-full($overflow, $classes-only) {
+  @include grid($grid-columns, $overflow, $classes-only); }
 
+// Grid logic
 @mixin grid-width($grid-columns) {
   @if $grid-columns == 1 {
     width: $grid-width; }
