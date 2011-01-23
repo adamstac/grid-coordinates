@@ -5,7 +5,6 @@ $grid-columns: 12 !default
 $grid-width: 60px !default
 $grid-gutter-width: 20px !default
 $overflow: true !default
-$classes-only: false !default
 
 =grid-coordinates
   @if $overflow
@@ -54,25 +53,19 @@ $classes-only: false !default
     .grid-pull-#{$i}
       +grid-pull($i)
 
-=overflow($overflow, $classes-only)
+=overflow
   @if $overflow
-    @if $classes-only
-      @extend .grid-pie-clearfix
-    @else
-      +pie-clearfix
+    +pie-clearfix
   @else
-    @if $classes-only
-      @extend .grid-clearfix
-    @else
-      +clearfix
+    +clearfix
 
 // Grid Container
 =grid-container-base
   margin: 0 auto
   width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
 
-=grid-container($overflow, $classes-only)
-  +overflow($overflow, $classes-only)
+=grid-container
+  +overflow
   +grid-container-base
 
 // Nested Container
@@ -83,8 +76,8 @@ $classes-only: false !default
     right: -$grid-gutter-width / 2
   width: auto
 
-=nested-grid-container($overflow, $classes-only)
-  +overflow($overflow, $classes-only)
+=nested-grid-container
+  +overflow
   +nested-grid-container-base
 
 // Grid Block
@@ -93,23 +86,20 @@ $classes-only: false !default
   position: relative
   margin: 0 $grid-gutter-width / 2
 
-=grid-block($overflow, $classes-only)
+=grid-block
   +grid-block-base
-  +overflow($overflow, $classes-only)
+  +overflow
 
 // Grid
 =grid-base($grid-columns)
   +grid-width($grid-columns)
 
-=grid($grid-columns, $overflow, $classes-only)
+=grid($grid-columns)
   +grid-base($grid-columns)
-  @if $classes-only
-    @extend .grid-block
-  @else
-    +grid-block($overflow, $classes-only)
+  +grid-block
 
-=grid-full($overflow, $classes-only)
-  +grid($grid-columns, $overflow, $classes-only)
+=grid-full
+  +grid($grid-columns)
 
 // Grid logic
 =grid-width($grid-columns)
