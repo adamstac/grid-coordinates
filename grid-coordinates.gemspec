@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
 
   # Gem Files
   s.files = [
-    "README.mdown",
-    "VERSION"
+    "Rakefile",
+    "README.mdown"
   ]
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
