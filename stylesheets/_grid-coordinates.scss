@@ -127,6 +127,6 @@ $overflow: true !default;
 
 @mixin grid-pull($grid-columns) {
   @if $grid-columns == 1 {
-    left: -$grid-width + $grid-gutter-width; }
+    left: -($grid-width + $grid-gutter-width); }
   @else {
-    left: -$grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
+    left: -($grid-columns * $grid-width + $grid-columns * $grid-gutter-width); } }

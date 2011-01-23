@@ -106,28 +106,28 @@ $overflow: true !default
   @if $grid-columns == 1
     width: $grid-width
   @else
-    width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width - $grid-gutter-width
+    width: (($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)) - $grid-gutter-width
 
 =grid-prefix($grid-columns)
   @if $grid-columns == 1
     padding-left: $grid-width + $grid-gutter-width
   @else
-    padding-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
+    padding-left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 =grid-suffix($grid-columns)
   @if $grid-columns == 1
     padding-right: $grid-width + $grid-gutter-width
   @else
-    padding-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
+    padding-right: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 =grid-push($grid-columns)
   @if $grid-columns == 1
     left: $grid-width + $grid-gutter-width
   @else
-    left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width
+    left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 =grid-pull($grid-columns)
   @if $grid-columns == 1
-    left: -$grid-width + $grid-gutter-width
+    left: -(($grid-width + $grid-gutter-width))
   @else
-    left: -$grid-columns * $grid-width + $grid-columns * $grid-gutter-width
+    left: -(($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width))
