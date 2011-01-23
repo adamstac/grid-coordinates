@@ -30,8 +30,8 @@ Take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/
     $grid-columns: 24
     $grid-width: 60px
     $grid-gutter-width: 10px
-    // Set to true by default
-    $overflow-allowed: false
+    // Set to true by default. Can be set to false to clip content that overflows a grid block.
+    // $overflow: false
     
     @import grid-coordinates
     
@@ -40,7 +40,7 @@ Take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/
     
     ...
 
-The `$overflow-allowed` setting controls which of Compass' two clearfix mixins to be used, `+clearfix` or `+pie-clearfix`. The default setting is set to `true` and will not clip any content that overflows a grid block. If for some reason you need to clip overflowing content update this setting to `false`.
+The `$overflow` setting controls which of Compass' two clearfix mixins to be used, `+clearfix` or `+pie-clearfix`. The default setting is set to `true` and will not clip any content that overflows a grid block. If for some reason you need to clip overflowing content update this setting to `false`.
 
 ### Using classes and `@extend`
 
