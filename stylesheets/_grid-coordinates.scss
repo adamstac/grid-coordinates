@@ -71,8 +71,8 @@ $overflow: true !default;
 @mixin nested-grid-container-base {
   display: inline-block;
   margin: {
-    left: -$grid-gutter-width / 2;
-    right: -$grid-gutter-width / 2; };
+    left: -($grid-gutter-width / 2);
+    right: -($grid-gutter-width / 2); };
   width: auto; }
 
 @mixin nested-grid-container {
@@ -108,25 +108,13 @@ $overflow: true !default;
     width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width - $grid-gutter-width; } }
 
 @mixin grid-prefix($grid-columns) {
-  @if $grid-columns == 1 {
-    padding-left: $grid-width + $grid-gutter-width; }
-  @else {
-    padding-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
+  padding-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
 
 @mixin grid-suffix($grid-columns) {
-  @if $grid-columns == 1 {
-    padding-right: $grid-width + $grid-gutter-width; }
-  @else {
-    padding-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
+  padding-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
 
 @mixin grid-push($grid-columns) {
-  @if $grid-columns == 1 {
-    left: $grid-width + $grid-gutter-width; }
-  @else {
-    left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; } }
+  left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
 
 @mixin grid-pull($grid-columns) {
-  @if $grid-columns == 1 {
-    left: -($grid-width + $grid-gutter-width); }
-  @else {
-    left: -($grid-columns * $grid-width + $grid-columns * $grid-gutter-width); } }
+  left: -($grid-columns * $grid-width) + $grid-columns * $grid-gutter-width; }
