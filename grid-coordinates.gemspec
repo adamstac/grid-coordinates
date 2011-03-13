@@ -3,7 +3,7 @@ require 'lib/grid-coordinates'
 Gem::Specification.new do |s|
   # Release Specific Information
   s.version = GridCoordinates::VERSION
-  s.date = "2010-09-20"
+  s.date = GridCoordinates::DATE
 
   # Gem Details
   s.name = "grid-coordinates"

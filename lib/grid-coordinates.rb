@@ -5,6 +5,7 @@ Compass::Frameworks.register("grid-coordinates", :path => "#{File.dirname(__FILE
 
 module GridCoordinates
   
-  VERSION = "1.1.3".freeze
+  VERSION = "1.1.4".freeze
+  DATE = "2011-03-13".freeze
 
 end
