@@ -52,7 +52,7 @@ For an example of this in use, take a peek at [grid-coordinates.com/.../demo.sas
 
 `@extend .nested-grid-container`
 
-`@extend .grid([columns])`
+`@extend .grid-[columns]`
 
 `@extend .grid-prefix-[columns]`
 
@@ -78,9 +78,9 @@ Use these mixins in your Sass stylesheets. Keep in mind that when you go the rou
 
 `+grid([columns])`
 
-`+grid-prefix([columns], [type])`
+`+grid-prefix([columns], [padding(default)/margin])`
 
-`+grid-suffix([columns], [type])`
+`+grid-suffix([columns], [padding(default)/margin])`
 
 `+grid-push([columns])`
 
