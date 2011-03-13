@@ -56,7 +56,11 @@ For an example of this in use, take a peek at [grid-coordinates.com/.../demo.sas
 
 `@extend grid-prefix([columns])`
 
+`@extend grid-prefix-margin-([columns])`
+
 `@extend grid-suffix([columns])`
+
+`@extend grid-suffix-margin-([columns])`
 
 `@extend grid-push([columns])`
 

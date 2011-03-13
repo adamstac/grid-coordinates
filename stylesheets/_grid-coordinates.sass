@@ -44,8 +44,14 @@ $overflow: true !default
     .grid-prefix-#{$i}
       +grid-prefix($i)
   @for $i from 1 through $grid-columns - 1
+    .grid-prefix-margin-#{$i}
+      +grid-prefix($i,margin)
+  @for $i from 1 through $grid-columns - 1
     .grid-suffix-#{$i}
       +grid-suffix($i)
+  @for $i from 1 through $grid-columns - 1
+    .grid-suffix-margin-#{$i}
+      +grid-suffix($i,margin)
   @for $i from 1 through $grid-columns - 1
     .grid-push-#{$i}
       +grid-push($i)
@@ -108,11 +114,17 @@ $overflow: true !default
   @else
     width: (($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)) - $grid-gutter-width
 
-=grid-prefix($grid-columns)
-  padding-left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
+=grid-prefix($grid-columns, $type: "padding")
+  @if $type == "padding"
+    padding-left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
+  @else
+    margin-left: (($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)) + ($grid-gutter-width / 2)
 
-=grid-suffix($grid-columns)
-  padding-right: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
+=grid-suffix($grid-columns, $type: "padding")
+  @if $type == "padding"
+    padding-right: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
+  @else
+    margin-right: (($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)) + ($grid-gutter-width / 2)
 
 =grid-push($grid-columns)
   left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
