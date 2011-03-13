@@ -48,25 +48,25 @@ When you use the mixin `+grid-coordinates` you are able to leverage the classes 
 
 For an example of this in use, take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/sass/demo.sass).
 
-`@extend grid-container`
+`@extend .grid-container`
 
-`@extend nested-grid-container`
+`@extend .nested-grid-container`
 
-`@extend grid([columns])`
+`@extend .grid([columns])`
 
-`@extend grid-prefix([columns])`
+`@extend .grid-prefix([columns])`
 
-`@extend grid-prefix-margin-([columns])`
+`@extend .grid-prefix-margin-([columns])`
 
-`@extend grid-suffix([columns])`
+`@extend .grid-suffix([columns])`
 
-`@extend grid-suffix-margin-([columns])`
+`@extend .grid-suffix-margin-([columns])`
 
-`@extend grid-push([columns])`
+`@extend .grid-push([columns])`
 
-`@extend grid-pull([columns])`
+`@extend .grid-pull([columns])`
 
-`@extend grid-full`
+`@extend .grid-full`
 
 ### Using the Mixins
 
@@ -78,9 +78,9 @@ Use these mixins in your Sass stylesheets. Keep in mind that when you go the rou
 
 `+grid([columns])`
 
-`+grid-prefix([columns])`
+`+grid-prefix([columns], [type])`
 
-`+grid-suffix([columns])`
+`+grid-suffix([columns], [type])`
 
 `+grid-push([columns])`
 
