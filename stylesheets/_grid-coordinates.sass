@@ -117,7 +117,7 @@ $overflow: true !default
 =grid-prefix($grid-columns, $type: "padding")
   @if $type == "padding"
     padding-left: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
-  @else
+  @else if $type == "margin"
     margin-left: (($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)) + ($grid-gutter-width / 2)
 
 =grid-suffix($grid-columns, $type: "padding")

@@ -78,7 +78,11 @@ Use these mixins in your Sass stylesheets. Keep in mind that when you go the rou
 
 `+grid([columns])`
 
+You can use grid-prefix as an extend `@extend .grid-prefix-margin-3` or as a mixin `+grid-prefix(3,margin)`.
+
 `+grid-prefix([columns], [padding(default)/margin])`
+
+You can use grid-suffix as an extend `@extend .grid-suffix-margin-3` or as a mixin `+grid-suffix(3,margin)`.
 
 `+grid-suffix([columns], [padding(default)/margin])`
 
