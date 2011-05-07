@@ -1,4 +1,4 @@
-require 'lib/grid-coordinates'
+require './lib/grid-coordinates'
 
 Gem::Specification.new do |s|
   # Release Specific Information
