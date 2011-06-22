@@ -1,6 +1,7 @@
 @import "compass/utilities";
+@import "compass/css3";
 
-// Configure grid coordinates
+// Configure Grid Coordinates
 $grid-columns: 12 !default;
 $grid-width: 60px !default;
 $grid-gutter-width: 20px !default;
@@ -87,6 +88,7 @@ $overflow: true !default;
 
 // Grid Block
 @mixin grid-block-base {
+  @include box-sizing(box-content);
   @include float-left;
   position: relative;
   margin: 0 $grid-gutter-width / 2; }
