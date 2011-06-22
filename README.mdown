@@ -1,14 +1,16 @@
 # Grid Coordinates
 
-## Sass based CSS Grid Framework Generator (Compass Extension)
+## A Sass based CSS Grid Framework Generator
 
-Grid Coordinates is a Highly configurable [Sass](http://sass-lang.com/) based CSS Grid Framework Generator delivered as a [Compass](http://compass-style.org/) extension inspired by the [1kb CSS Grid](http://1kbgrid.com/) project by [Tyler Tate](http://twitter.com/tylertate).
+Grid Coordinates is a highly configurable [Sass](http://sass-lang.com/) based CSS Grid Framework Generator, inspired by [960.gs](http://960.gs/) and [1kb CSS Grid](http://1kbgrid.com/). Grid Coordinates takes the "coordinates" (total columns, grid width, gutter width) and generates the styles required for your grid.
 
-## Just the grid please.
+Grid Coordinates can be used as a [Compass](http://compass-style.org/) extension and is delivered as a [Ruby gem](http://rubygems.org/).
 
-Grid Coordinates is quite simple. It's just a grid. And it is able to generate styles for grids of any size - you control the coordinates and it generates the styles.
+## Just the grid
 
-It fully leverages classes, extends and mixins (if that's your preference) to set up the styles for your grid. It supports nested grids, prefix and suffix grid features as well as push and pull grid features.
+Grid Coordinates does one job - provide a rock solid grid framework. It's able to generate styles for grids of any size - you control the coordinates and it generates the styles.
+
+It fully leverages classes, extends and mixins to set up the styles for your grid. It supports nested grids, prefix and suffix grid features as well as push and pull grid features.
 
 ## Installation
 
@@ -18,7 +20,7 @@ Then add `require 'grid-coordinates'` to your Compass config file.
 
 ## Usage
 
-Grid-coordinates defaults to create a 960 pixel grid with 12 columns and a 60px gutter. You can override these defaults in your project if this grid doesn't suit your needs.
+Grid Coordinates defaults to a 960px grid with 12 columns and a 60px gutter (perfect for fans of 960.gs). You can override these defaults in your project if this grid doesn't suit your needs.
 
 Use [1kbgrid.com](http://1kbgrid.com) or another grid generator for guidance on configuring your grid's settings.
 
@@ -27,26 +29,21 @@ Take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/
 ### Configure as needed and import
 
     // Configure grid coordinates
-    $grid-columns: 24
+    $grid-columns: 12
     $grid-width: 60px
-    $grid-gutter-width: 10px
-    // Set to true by default. Can be set to false to clip content that overflows a grid block.
-    // $overflow: false
+    $grid-gutter-width: 20px
     
-    @import grid-coordinates
+    @import "grid-coordinates"
     
-    // Only needed if you're using the classes and `@extend` instead of the mixins (suggested)
     +grid-coordinates
-    
-    ...
 
-The `$overflow` setting controls which of Compass' two clearfix mixins to be used, `+clearfix` or `+pie-clearfix`. The default setting is set to `true` and will not clip any content that overflows a grid block. If for some reason you need to clip overflowing content update this setting to `false`.
+You can also set `$overflow` to false (set to true by default) to control which of Compass' two clearfix mixins will be used, `+clearfix` or `+pie-clearfix`. The default setting is `true` and will not clip any content that overflows a grid block. If for some reason you need to clip overflowing content, set `$overflow` to false in your configuration.
 
 ### Using classes and `@extend`
 
-When you use the mixin `+grid-coordinates` you are able to leverage the classes in your HTML or use the Sass `extend` option to "extend" the classes in your Sass stylesheets.
+When you use the mixin `+grid-coordinates` (as shown above) you are able to leverage the CSS class selectors in your HTML markup or use the Sass `extend` option to "extend" the class selectors in your Sass stylesheets.
 
-For an example of this in use, take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/sass/demo.sass).
+For an example of this in use, look at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/sass/demo.sass).
 
 `@extend .grid-container`
 
@@ -56,11 +53,7 @@ For an example of this in use, take a peek at [grid-coordinates.com/.../demo.sas
 
 `@extend .grid-prefix-[columns]`
 
-`@extend .grid-prefix-margin-[columns]`
-
 `@extend .grid-suffix-[columns]`
-
-`@extend .grid-suffix-margin-[columns]`
 
 `@extend .grid-push-[columns]`
 
@@ -68,9 +61,9 @@ For an example of this in use, take a peek at [grid-coordinates.com/.../demo.sas
 
 `@extend .grid-full`
 
-### Using the Mixins
+### Using mixins
 
-Use these mixins in your Sass stylesheets. Keep in mind that when you go the route of using mixins you are replicated much code in your output CSS. It's advised that you to learn the [Sass extend concept](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) and use that method vs mixins. Your output CSS code with thank you.
+Regardless if go the route of using the mixin `+grid-coordinates` (as shown above) or not, you'll have access to use these mixins in your Sass stylesheets. Keep in mind that when you go the route of using mixins, you could end up replicating a lot of code in your output CSS. Learn more about the [Sass extend concept](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) to see if you should use that method or mixins. Either way, Grid Coordinates got your back.
 
 `+grid-container`
 
@@ -78,19 +71,19 @@ Use these mixins in your Sass stylesheets. Keep in mind that when you go the rou
 
 `+grid([columns])`
 
-You can use grid-prefix as an extend `@extend .grid-prefix-margin-3` or as a mixin `+grid-prefix(3,margin)`.
+`+grid-prefix([columns])`
 
-`+grid-prefix([columns], [padding(default)/margin])`
-
-You can use grid-suffix as an extend `@extend .grid-suffix-margin-3` or as a mixin `+grid-suffix(3,margin)`.
-
-`+grid-suffix([columns], [padding(default)/margin])`
+`+grid-suffix([columns])`
 
 `+grid-push([columns])`
 
 `+grid-pull([columns])`
 
 `+grid-full`
+
+### Advanced usage of prefix and suffix
+
+More advanced users may appreciate the ability to use margin instead of padding when using the prefix and suffix feature. For example `@extend .grid-prefix-margin-3` or as a mixin `+grid-prefix(3,margin)`. Likewise, suffix would be `@extend .grid-suffix-margin-3` or as a mixin `+grid-suffix(3,margin)`.
 
 ## License
 
