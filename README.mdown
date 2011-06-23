@@ -2,9 +2,9 @@
 
 ## A Sass based CSS Grid Framework Generator
 
-Grid Coordinates is a highly configurable [Sass](http://sass-lang.com/) based CSS Grid Framework Generator, inspired by [960.gs](http://960.gs/) and [1kb CSS Grid](http://1kbgrid.com/). Grid Coordinates takes the "coordinates" (total columns, grid width, gutter width) and generates the styles required for your grid.
+Grid Coordinates is a highly configurable [Sass](http://sass-lang.com/) based CSS Grid Framework Generator, inspired by [960 Grid System](http://960.gs/) and [1kb CSS Grid](http://1kbgrid.com/). Grid Coordinates takes the "coordinates" (total columns, grid width, gutter width) and generates the styles required for your grid.
 
-Grid Coordinates can be used as a [Compass](http://compass-style.org/) extension and is delivered as a [Ruby gem](http://rubygems.org/).
+Grid Coordinates can be used as a [Compass](http://compass-style.org/) [extension](http://compass-style.org/help/tutorials/extensions/) and is delivered as a [Ruby gem](http://rubygems.org/gems/grid-coordinates).
 
 ## Just the grid
 
@@ -22,7 +22,7 @@ Then add `require 'grid-coordinates'` to your Compass config file.
 
 Grid Coordinates defaults to a 960px grid with 12 columns and a 60px gutter (perfect for fans of 960.gs). You can override these defaults in your project if this grid doesn't suit your needs.
 
-Use [1kbgrid.com](http://1kbgrid.com) or another grid generator for guidance on configuring your grid's settings.
+Use the [variable grid system](http://grids.heroku.com/) to plot the course for your CSS grid. The coordinates generated are based on the 960 Grid System, which is one point of inspiration for Grid Coordinates.
 
 Take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/sass/demo.sass) for a demonstration of how to use Grid Coordinates as well its [output CSS](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/public/grid-coordinates/css/demo.css).
 
