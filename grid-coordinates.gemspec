@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
 
   # Gem Details
   s.name = "grid-coordinates"
-  s.description = %q{Highly configurable Sass based CSS Grid Framework Generator (Compass Extension)}
-  s.summary = %q{A Sass based CSS Grid Framework Generator, inspired by 960.gs and 1kb CSS Grid, that takes the coordinates (total columns, grid width, gutter width) and generates the required styles.}
+  s.description = %q{A highly configurable Sass based CSS Grid Framework Generator}
+  s.summary = %q{A highly configurable Sass based CSS Grid Framework Generator, inspired by 960.gs and 1kb CSS Grid, that takes the coordinates (total columns, grid width, gutter width) and generates the required styles.}
   s.authors = ["Adam Stacoviak"]
   s.email = "adam@stacoviak.com"
   s.homepage = "http://grid-coordinates.com/"
