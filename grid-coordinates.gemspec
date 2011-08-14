@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   # Gem Details
   s.name = "grid-coordinates"
   s.description = %q{A highly configurable Sass based CSS Grid Framework Generator}
-  s.summary = %q{A highly configurable Sass based CSS Grid Framework Generator, inspired by 960.gs and 1kb CSS Grid, that takes the coordinates (total columns, grid width, gutter width) and generates the required styles.}
+  s.summary = %q{A highly configurable Sass based CSS Grid Framework Generator inspired by 960.gs and 1kb CSS Grid that takes the coordinates (total columns, grid width, gutter width) and generates the required styles.}
   s.authors = ["Adam Stacoviak"]
   s.email = "adam@stacoviak.com"
   s.homepage = "http://grid-coordinates.com/"
@@ -20,9 +20,10 @@ Gem::Specification.new do |s|
   ]
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
+  s.files += Dir.glob("test/**/*.*")
 
   # Gem Bookkeeping
   s.required_rubygems_version = ">= 1.3.6"
   s.rubygems_version = %q{1.3.6}
-  s.add_dependency("compass", [">= 0.11.3"])
+  s.add_dependency("compass", [">= 0.11.5"])
 end

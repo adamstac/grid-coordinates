@@ -2,24 +2,15 @@
 %html{html_attrs}
   %head
     %meta{ "http-equiv" => "content-type", "content" => "text/html; charset=utf-8" }
-    - if @description
-      %meta{ "name" => "description", "content" => @description }
-    - if @keywords
-      %meta{ "name" => "keywords", "content" => @keywords }
     %title= @title
     %link{ :href => "/stylesheets/screen.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.2/jquery.min.js"}
     %script{:src => "/javascripts/site.js"}
-  %body{ :class => @body_class }
+  %body
     #header.grid-container
       #branding.grid-4
         %p Branding
-      #navigation.grid-7.grid-prefix-margin-1
-        %p Navigation
-    #header.grid-container
-      #branding.grid-4
-        %p Branding
-      #navigation.grid-7.grid-prefix-1
+      #navigation.grid-8
         %p Navigation
     #page.grid-container
       #page-body.grid-8
