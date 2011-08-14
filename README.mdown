@@ -81,10 +81,6 @@ Regardless if go the route of using the mixin `+grid-coordinates` (as shown abov
 
 `+grid-full`
 
-### Advanced usage of prefix and suffix
-
-More advanced users may appreciate the ability to use margin instead of padding when using the prefix and suffix feature. For example `@extend .grid-prefix-margin-3` or as a mixin `+grid-prefix(3,margin)`. Likewise, suffix would be `@extend .grid-suffix-margin-3` or as a mixin `+grid-suffix(3,margin)`.
-
 ## License
 
 Copyright (c) 2009 Adam Stacoviak

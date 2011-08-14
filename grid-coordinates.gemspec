@@ -14,13 +14,9 @@ Gem::Specification.new do |s|
   s.homepage = "http://grid-coordinates.com/"
 
   # Gem Files
-  s.files = [
-    "Rakefile",
-    "README.mdown"
-  ]
+  s.files = ["README.mdown"]
   s.files += Dir.glob("lib/**/*.*")
-  s.files += Dir.glob("stylesheets/**/*.*")
-  s.files += Dir.glob("test/**/*.*")
+  s.files += Dir.glob("stylesheets/_grid-coordinates.sass")
 
   # Gem Bookkeeping
   s.required_rubygems_version = ">= 1.3.6"
