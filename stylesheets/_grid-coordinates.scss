@@ -44,14 +44,8 @@ $overflow: true !default;
     .grid-prefix-#{$i} {
       @include grid-prefix($i); } }
   @for $i from 1 through $grid-columns - 1 {
-    .grid-prefix-margin-#{$i} {
-      @include grid-prefix($i, margin); } }
-  @for $i from 1 through $grid-columns - 1 {
     .grid-suffix-#{$i} {
       @include grid-suffix($i); } }
-  @for $i from 1 through $grid-columns - 1 {
-    .grid-suffix-margin-#{$i} {
-      @include grid-suffix($i, margin); } }
   @for $i from 1 through $grid-columns - 1 {
     .grid-push-#{$i} {
       @include grid-push($i); } }
@@ -88,7 +82,7 @@ $overflow: true !default;
 
 // Grid Block
 @mixin grid-block-base {
-  @include box-sizing(box-content);
+  @include box-sizing(border-box);
   @include float-left;
   position: relative;
   margin: 0 $grid-gutter-width / 2; }
@@ -115,17 +109,11 @@ $overflow: true !default;
   @else {
     width: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width - $grid-gutter-width; } }
 
-@mixin grid-prefix($grid-columns, $type: "padding") {
-  @if $type == "padding" {
-    padding-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
-  @else if $type == "margin" {
-    margin-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width + $grid-gutter-width / 2; } }
+@mixin grid-prefix($grid-columns) {
+  margin-left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width + $grid-gutter-width / 2; }
 
-@mixin grid-suffix($grid-columns, $type: "padding") {
-  @if $type == "padding" {
-    padding-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
-  @else {
-    margin-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width + $grid-gutter-width / 2; } }
+@mixin grid-suffix($grid-columns) {
+  margin-right: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width + $grid-gutter-width / 2; }
 
 @mixin grid-push($grid-columns) {
   left: $grid-columns * $grid-width + $grid-columns * $grid-gutter-width; }
