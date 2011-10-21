@@ -1,37 +1,36 @@
 @import "compass/utilities"
 @import "compass/css3"
 
+// Modules
+@import "modules/awesome-clearfix"
+
 // Configure Grid Coordinates
 $grid-columns: 12 !default
 $grid-width: 60px !default
 $grid-gutter-width: 20px !default
-$overflow: true !default
+
+// Support for deprecated clearfix options
+// See modules/awesome-clearfix for details
+$support-legacy-grid-clearfix: true !default
+
+// Deprecated
+$overflow: false !default
 
 =grid-coordinates
-  @if $overflow
-    .grid-pie-clearfix
-      +pie-clearfix
-  @else
-    .grid-clearfix
-      +clearfix
+  .a-clearfix
+    @include a-clearfix
+  @if $support-legacy-grid-clearfix
+    .grid-clearfix, .grid-pie-clearfix
+      @extend .a-clearfix
   .grid-container
     +grid-container-base
-    @if $overflow
-      @extend .grid-pie-clearfix
-    @else
-      @extend .grid-clearfix
+    @extend .a-clearfix
   .nested-grid-container
     +nested-grid-container-base
-    @if $overflow
-      @extend .grid-pie-clearfix
-    @else
-      @extend .grid-clearfix
+    @extend .a-clearfix
   .grid-block
     +grid-block-base
-    @if $overflow
-      @extend .grid-pie-clearfix
-    @else
-      @extend .grid-clearfix
+    @extend .a-clearfix
   .grid-full
     +grid-base($grid-columns)
     @extend .grid-block
@@ -54,11 +53,10 @@ $overflow: true !default
     .grid-pull-#{$i}
       +grid-pull($i)
 
+// Being deprecated
 =overflow
-  @if $overflow
-    +pie-clearfix
-  @else
-    +clearfix
+  @if $overflow and $support-legacy-grid-clearfix
+    @include a-clearfix
 
 // Grid Container
 =grid-container-base
@@ -66,7 +64,7 @@ $overflow: true !default
   width: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 =grid-container
-  +overflow
+  @include a-clearfix
   +grid-container-base
 
 // Nested Container
@@ -78,7 +76,7 @@ $overflow: true !default
   width: auto
 
 =nested-grid-container
-  +overflow
+  @include a-clearfix
   +nested-grid-container-base
 
 // Grid Block
@@ -90,7 +88,7 @@ $overflow: true !default
 
 =grid-block
   +grid-block-base
-  +overflow
+  @include a-clearfix
 
 // Grid
 =grid-base($grid-columns)

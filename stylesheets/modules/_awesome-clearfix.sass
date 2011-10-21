@@ -1,0 +1,19 @@
+@mixin awesome-clearfix
+  zoom: 1
+  &:before, &:after
+    content: '.'
+    display: block
+    overflow: hidden
+    visibility: hidden
+    font-size: 0
+    line-height: 0
+    width: 0
+    height: 0
+  &:after
+    clear: both
+
+@mixin a-clearfix
+  @include awesome-clearfix
+
+.a-clearfix
+  @include a-clearfix
