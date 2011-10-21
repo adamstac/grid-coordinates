@@ -1,6 +1,6 @@
 # Grid Coordinates
 
-Grid Coordinates is a highly configurable CSS Grid Framework written in Sass, and was inspired by 960.gs and The 1kb CSS Grid. Plug-in your grid's coordinates (grid columns, grid width, gutter width) and generates the required styles.
+Grid Coordinates is a highly configurable CSS Grid Framework written in Sass, and was inspired by 960.gs and The 1kb CSS Grid. Just plug-in your grid's coordinates (grid columns, grid width, gutter width) and Grid Coordinates will generate the styles.
 
 ## License
 
