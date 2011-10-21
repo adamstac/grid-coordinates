@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
 
   # Gem Details
   s.name = "grid-coordinates"
-  s.description = %q{A highly configurable Sass based CSS Grid Framework Generator}
-  s.summary = %q{A highly configurable Sass based CSS Grid Framework Generator inspired by 960.gs and 1kb CSS Grid that takes the coordinates (total columns, grid width, gutter width) and generates the required styles.}
+  s.description = %q{Highly configurable CSS Grid Framework written in Sass.}
+  s.summary = %q{Grid Coordinates is a highly configurable CSS Grid Framework written in Sass, and was inspired by 960.gs and The 1kb CSS Grid. Plug-in your grid's coordinates (grid columns, grid width, gutter width) and generates the required styles.}
   s.authors = ["Adam Stacoviak"]
   s.email = "adam@stacoviak.com"
   s.homepage = "http://grid-coordinates.com/"
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   # Gem Files
   s.files = ["README.mdown"]
   s.files += Dir.glob("lib/**/*.*")
-  s.files += Dir.glob("stylesheets/_grid-coordinates.sass")
+  s.files += Dir.glob("stylesheets/**/*.*")
 
   # Gem Bookkeeping
   s.required_rubygems_version = ">= 1.3.6"
