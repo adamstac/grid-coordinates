@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   # Gem Details
   s.name = "grid-coordinates"
   s.description = %q{Highly configurable CSS Grid Framework written in Sass.}
-  s.summary = %q{Grid Coordinates is a highly configurable CSS Grid Framework written in Sass, and was inspired by 960.gs and The 1kb CSS Grid. Plug-in your grid's coordinates (grid columns, grid width, gutter width) and generates the required styles.}
+  s.summary = %q{Grid Coordinates is a highly configurable CSS Grid Framework written in Sass, and was inspired by 960.gs and The 1kb CSS Grid. Just plug-in your grid's coordinates (grid columns, grid width, gutter width) and Grid Coordinates will generate the styles.}
   s.authors = ["Adam Stacoviak"]
   s.email = "adam@stacoviak.com"
   s.homepage = "http://grid-coordinates.com/"
