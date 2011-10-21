@@ -38,7 +38,8 @@
 }
 
 .grid-container {
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   width: 960px;
 }
 
@@ -57,7 +58,8 @@
   display: inline;
   float: left;
   position: relative;
-  margin: 0 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .grid-full {

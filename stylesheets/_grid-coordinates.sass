@@ -60,7 +60,9 @@ $overflow: false !default
 
 // Grid Container
 =grid-container-base
-  margin: 0 auto
+  margin:
+    right: auto
+    left: auto
   width: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 =grid-container
@@ -84,7 +86,9 @@ $overflow: false !default
   +box-sizing(border-box)
   +float-left
   position: relative
-  margin: 0 ($grid-gutter-width / 2)
+  margin:
+    right: ($grid-gutter-width / 2)
+    left: ($grid-gutter-width / 2)
 
 =grid-block
   +grid-block-base
