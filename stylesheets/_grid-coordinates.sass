@@ -23,35 +23,35 @@ $overflow: false !default
     .grid-clearfix, .grid-pie-clearfix
       @extend .a-clearfix
   .grid-container
-    +grid-container-base
+    @include grid-container-base
     @extend .a-clearfix
   .nested-grid-container
-    +nested-grid-container-base
+    @include nested-grid-container-base
     @extend .a-clearfix
   .grid-block
-    +grid-block-base
+    @include grid-block-base
     @extend .a-clearfix
   .grid-full
-    +grid-base($grid-columns)
+    @include grid-base($grid-columns)
     @extend .grid-block
 
   // Loops
   @for $i from 1 through $grid-columns
     .grid-#{$i}
-      +grid-base($i)
+      @include grid-base($i)
       @extend .grid-block
   @for $i from 1 through $grid-columns - 1
     .grid-prefix-#{$i}
-      +grid-prefix($i)
+      @include grid-prefix($i)
   @for $i from 1 through $grid-columns - 1
     .grid-suffix-#{$i}
-      +grid-suffix($i)
+      @include grid-suffix($i)
   @for $i from 1 through $grid-columns - 1
     .grid-push-#{$i}
-      +grid-push($i)
+      @include grid-push($i)
   @for $i from 1 through $grid-columns - 1
     .grid-pull-#{$i}
-      +grid-pull($i)
+      @include grid-pull($i)
 
 // Being deprecated
 =overflow
@@ -67,7 +67,7 @@ $overflow: false !default
 
 =grid-container
   @include a-clearfix
-  +grid-container-base
+  @include grid-container-base
 
 // Nested Container
 =nested-grid-container-base
@@ -79,31 +79,31 @@ $overflow: false !default
 
 =nested-grid-container
   @include a-clearfix
-  +nested-grid-container-base
+  @include nested-grid-container-base
 
 // Grid Block
 =grid-block-base
-  +box-sizing(border-box)
-  +float-left
+  @include box-sizing(border-box)
+  @include float-left
   position: relative
   margin:
     right: ($grid-gutter-width / 2)
     left: ($grid-gutter-width / 2)
 
 =grid-block
-  +grid-block-base
+  @include grid-block-base
   @include a-clearfix
 
 // Grid
 =grid-base($grid-columns)
-  +grid-width($grid-columns)
+  @include grid-width($grid-columns)
 
 =grid($grid-columns)
-  +grid-base($grid-columns)
-  +grid-block
+  @include grid-base($grid-columns)
+  @include grid-block
 
 =grid-full
-  +grid($grid-columns)
+  @include grid($grid-columns)
 
 // Grid logic
 =grid-width($grid-columns)
