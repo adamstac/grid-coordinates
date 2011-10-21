@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://grid-coordinates.com/"
 
   # Gem Files
-  s.files = ["README.mdown"]
+  s.files = ["ABOUT.mdown"]
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
 
