@@ -3,7 +3,7 @@ Compass::Frameworks.register("grid-coordinates", :path => "#{File.dirname(__FILE
 
 module GridCoordinates
   
-  VERSION = "1.1.5"
-  DATE = "2011-08-14"
+  VERSION = "1.1.6"
+  DATE = "2011-10-21"
 
 end
