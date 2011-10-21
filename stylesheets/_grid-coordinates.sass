@@ -53,11 +53,6 @@ $overflow: false !default
     .grid-pull-#{$i}
       @include grid-pull($i)
 
-// Being deprecated
-=overflow
-  @if $overflow and $support-legacy-grid-clearfix
-    @include a-clearfix
-
 // Grid Container
 =grid-container-base
   margin:
