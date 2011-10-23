@@ -1,4 +1,11 @@
-@mixin awesome-clearfix
+// Bulletproof Clearfix
+// Prescribed by Nathan Smith / @NathanSmith
+//
+// References:
+//
+// 1. https://gist.github.com/1260785
+
+@mixin bulletproof-clearfix
   zoom: 1
   &:before, &:after
     content: '.'
@@ -11,9 +18,3 @@
     height: 0
   &:after
     clear: both
-
-@mixin a-clearfix
-  @include awesome-clearfix
-
-.a-clearfix
-  @include a-clearfix

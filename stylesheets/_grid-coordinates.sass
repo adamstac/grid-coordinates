@@ -2,7 +2,7 @@
 @import "compass/css3"
 
 // Modules
-@import "modules/awesome-clearfix"
+@import "modules/bulletproof-clearfix"
 
 // Configure Grid Coordinates
 $grid-columns: 12 !default
@@ -10,27 +10,24 @@ $grid-width: 60px !default
 $grid-gutter-width: 20px !default
 
 // Support for deprecated clearfix options
-// See modules/awesome-clearfix for details
 $support-legacy-grid-clearfix: true !default
 
 =grid-coordinates
-  .a-clearfix
-    @include a-clearfix
+  .__clearfix
+    @include bulletproof-clearfix
   @if $support-legacy-grid-clearfix
     .grid-clearfix, .grid-pie-clearfix
-      @extend .a-clearfix
+      @extend .__clearfix
+  .grid-container, .nested-grid-container, .grid-block, .grid-full
+    @extend .__clearfix
   .grid-container
     @include grid-container-base
-    @extend .a-clearfix
   .nested-grid-container
     @include nested-grid-container-base
-    @extend .a-clearfix
   .grid-block
     @include grid-block-base
-    @extend .a-clearfix
   .grid-full
     @include grid-base($grid-columns)
-    @extend .grid-block
 
   // Loops
   @for $i from 1 through $grid-columns
@@ -58,7 +55,7 @@ $support-legacy-grid-clearfix: true !default
   width: ($grid-columns * $grid-width) + ($grid-columns * $grid-gutter-width)
 
 =grid-container
-  @include a-clearfix
+  @include bulletproof-clearfix
   @include grid-container-base
 
 // Nested Container
@@ -70,7 +67,7 @@ $support-legacy-grid-clearfix: true !default
   width: auto
 
 =nested-grid-container
-  @include a-clearfix
+  @include bulletproof-clearfix
   @include nested-grid-container-base
 
 // Grid Block
@@ -83,8 +80,8 @@ $support-legacy-grid-clearfix: true !default
     left: ($grid-gutter-width / 2)
 
 =grid-block
+  @include bulletproof-clearfix
   @include grid-block-base
-  @include a-clearfix
 
 // Grid
 =grid-base($grid-columns)
