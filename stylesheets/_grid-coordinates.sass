@@ -28,6 +28,7 @@ $support-legacy-grid-clearfix: true !default
     @include grid-block-base
   .grid-full
     @include grid-base($grid-columns)
+    @extend .grid-block
 
   // Loops
   @for $i from 1 through $grid-columns
