@@ -35,16 +35,16 @@ $support-legacy-grid-clearfix: true !default
     .grid-#{$i}
       @include grid-base($i)
       @extend .grid-block
-  @for $i from 1 through $grid-columns - 1
+  @for $i from 1 to $grid-columns
     .grid-prefix-#{$i}
       @include grid-prefix($i)
-  @for $i from 1 through $grid-columns - 1
+  @for $i from 1 to $grid-columns
     .grid-suffix-#{$i}
       @include grid-suffix($i)
-  @for $i from 1 through $grid-columns - 1
+  @for $i from 1 to $grid-columns
     .grid-push-#{$i}
       @include grid-push($i)
-  @for $i from 1 through $grid-columns - 1
+  @for $i from 1 to $grid-columns
     .grid-pull-#{$i}
       @include grid-pull($i)
 
