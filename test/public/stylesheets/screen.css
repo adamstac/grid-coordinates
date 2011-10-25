@@ -3,10 +3,10 @@
   font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
 }
 
-.__clearfix, .grid-clearfix, .grid-pie-clearfix, .grid-container, .nested-grid-container, .grid-block, .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12, .grid-full {
+.__clearfix, .grid-clearfix, .grid-pie-clearfix, .grid-container, .nested-grid-container, .grid-block, .grid-full, .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
   zoom: 1;
 }
-.__clearfix:before, .grid-clearfix:before, .grid-pie-clearfix:before, .grid-container:before, .nested-grid-container:before, .grid-block:before, .grid-1:before, .grid-2:before, .grid-3:before, .grid-4:before, .grid-5:before, .grid-6:before, .grid-7:before, .grid-8:before, .grid-9:before, .grid-10:before, .grid-11:before, .grid-12:before, .grid-full:before, .__clearfix:after, .grid-clearfix:after, .grid-pie-clearfix:after, .grid-container:after, .nested-grid-container:after, .grid-block:after, .grid-1:after, .grid-2:after, .grid-3:after, .grid-4:after, .grid-5:after, .grid-6:after, .grid-7:after, .grid-8:after, .grid-9:after, .grid-10:after, .grid-11:after, .grid-12:after, .grid-full:after {
+.__clearfix:before, .grid-clearfix:before, .grid-pie-clearfix:before, .grid-container:before, .nested-grid-container:before, .grid-block:before, .grid-full:before, .grid-1:before, .grid-2:before, .grid-3:before, .grid-4:before, .grid-5:before, .grid-6:before, .grid-7:before, .grid-8:before, .grid-9:before, .grid-10:before, .grid-11:before, .grid-12:before, .__clearfix:after, .grid-clearfix:after, .grid-pie-clearfix:after, .grid-container:after, .nested-grid-container:after, .grid-block:after, .grid-full:after, .grid-1:after, .grid-2:after, .grid-3:after, .grid-4:after, .grid-5:after, .grid-6:after, .grid-7:after, .grid-8:after, .grid-9:after, .grid-10:after, .grid-11:after, .grid-12:after {
   content: ".";
   display: block;
   overflow: hidden;
@@ -16,7 +16,7 @@
   width: 0;
   height: 0;
 }
-.__clearfix:after, .grid-clearfix:after, .grid-pie-clearfix:after, .grid-container:after, .nested-grid-container:after, .grid-block:after, .grid-1:after, .grid-2:after, .grid-3:after, .grid-4:after, .grid-5:after, .grid-6:after, .grid-7:after, .grid-8:after, .grid-9:after, .grid-10:after, .grid-11:after, .grid-12:after, .grid-full:after {
+.__clearfix:after, .grid-clearfix:after, .grid-pie-clearfix:after, .grid-container:after, .nested-grid-container:after, .grid-block:after, .grid-full:after, .grid-1:after, .grid-2:after, .grid-3:after, .grid-4:after, .grid-5:after, .grid-6:after, .grid-7:after, .grid-8:after, .grid-9:after, .grid-10:after, .grid-11:after, .grid-12:after {
   clear: both;
 }
 
@@ -33,7 +33,7 @@
   width: auto;
 }
 
-.grid-block, .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
+.grid-block, .grid-full, .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
