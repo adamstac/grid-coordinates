@@ -9,7 +9,7 @@
   $grid-background-offset: 10px
   #grid
     +column-grid-background()
-    // display: none
+    display: none
     position: fixed
     top: 0
     left: 50%
@@ -21,7 +21,7 @@
   .toggle-grid
     +transition-property(color)
     +transition-duration(.5s)
-    position: absolute
+    position: fixed
     top: 10px
     right: 10px
     color: #fff
@@ -34,34 +34,25 @@
     text-decoration: none
     &:hover
       color: #999
-    .show
+    .hide
       display: none
 
   body
     @extend .font-helvetica
     background: #fff
   
-  #branding, #navigation, #page-body, #page-sidebar, #footer-content
-    +transition-property(background)
-    +transition-duration(.75s)
-    background: #e7e7e7
-    color: #999
-    font-size: 13px
-    text-align: center
-    &:hover
-      background: #ddd
-  
-  #branding, #navigation
-    line-height: 50px
-  
-  #page-body, #page-sidebar
-    line-height: 600px
-
-  #footer-content
-    line-height: 50px
-  
-  #header, #page
-    margin-bottom: $grid-gutter-width
-
-  #header
-    margin-top: $grid-gutter-width
+  .grid-test
+    .grid-container
+      margin-bottom: 20px
+      &:first-of-type
+        margin-top: 20px
+      & > div
+        +transition-property(background)
+        +transition-duration(.75s)
+        background: #e7e7e7
+        color: #999
+        font-size: 13px
+        line-height: 50px
+        text-align: center
+        &:hover
+          background: #ddd

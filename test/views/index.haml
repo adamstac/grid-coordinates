@@ -7,16 +7,73 @@
     %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.2/jquery.min.js"}
     %script{:src => "/javascripts/site.js"}
   %body
-    #header.grid-container
-      #branding.grid-3.grid-suffix-1
-        %p Branding
-      #navigation.grid-7.grid-push-1
-        %p Navigation
-    #page.grid-container
-      #page-body.grid-8
-        %p Body
-      #page-sidebar.grid-4
-        %p Sidebar
-    #footer.grid-container
-      #footer-content.grid-full
-        %p Footer
+    .grid-test
+      .grid-container
+        .grid-1
+          Grid 1
+      .grid-container
+        .grid-2
+          Grid 2
+      .grid-container
+        .grid-3
+          Grid 3
+      .grid-container
+        .grid-4
+          Grid 4
+      .grid-container
+        .grid-5
+          Grid 5
+      .grid-container
+        .grid-6
+          Grid 6
+      .grid-container
+        .grid-7
+          Grid 7
+      .grid-container
+        .grid-8
+          Grid 8
+      .grid-container
+        .grid-9
+          Grid 9
+      .grid-container
+        .grid-10
+          Grid 10
+      .grid-container
+        .grid-11
+          Grid 11
+      .grid-container
+        .grid-12
+          Grid 12
+      .grid-container
+        .grid-full
+          Grid Full
+
+      .grid-container
+        .grid-5.grid-suffix-1
+          Grid 3 / Prefix 1
+        .grid-5.grid-prefix-1
+          Grid 3 / Prefix 1
+
+      .grid-container
+        .grid-10.grid-suffix-2
+          Grid 8 / Suffix 4
+
+      .grid-container
+        .grid-5.grid-prefix-1
+          Grid 3 / Prefix 1
+        .grid-5.grid-suffix-1
+          Grid 3 / Prefix 1
+      
+      .grid-container
+        .grid-8
+          .nested-grid-container
+            .grid-4
+              Nested Grid 4
+            .grid-4
+              Nested Grid 4
+        .grid-4
+          .nested-grid-container
+            .grid-2
+              Nested Grid 2
+            .grid-2
+              Nested Grid 2
