@@ -2,9 +2,11 @@
 
 ## A Sass based CSS Grid Framework Generator
 
-Grid Coordinates is a highly configurable [Sass](http://sass-lang.com/) based CSS Grid Framework Generator, inspired by [960 Grid System](http://960.gs/) and [1kb CSS Grid](http://1kbgrid.com/). Grid Coordinates takes the "coordinates" (total columns, grid width, gutter width) and generates the styles required for your grid.
+Grid Coordinates is a highly configurable CSS Grid Framework written in [Sass](http://sass-lang.com/), inspired by Nathan Smith's [960.gs](http://960.gs/) and Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/).
 
-Grid Coordinates can be used as a [Compass](http://compass-style.org/) [extension](http://compass-style.org/help/tutorials/extensions/) and is delivered as a [Ruby gem](http://rubygems.org/gems/grid-coordinates).
+Grid Coordinates takes the "coordinates" (grid columns, grid width and grid gutter width) and generates the styles required for your grid.
+
+Grid Coordinates is designed to be used as a [Compass](http://compass-style.org/) [extension](http://compass-style.org/help/tutorials/extensions/) and can be installed as a [Ruby gem](http://rubygems.org/gems/grid-coordinates) or as a stand alone Compass extension.
 
 ## Just the grid
 
@@ -22,34 +24,46 @@ Then add `require 'grid-coordinates'` to your Compass config file.
 
 Grid Coordinates defaults to a 960px grid with 12 columns and a 60px gutter (perfect for fans of 960.gs). You can override these defaults in your project if this grid doesn't suit your needs.
 
-Use the [variable grid system](http://grids.heroku.com/) to plot the course for your CSS grid. The coordinates generated are based on the 960 Grid System, which is one point of inspiration for Grid Coordinates.
-
-Take a peek at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/sass/demo.sass) for a demonstration of how to use Grid Coordinates as well its [output CSS](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/public/grid-coordinates/css/demo.css).
+Use the [variable grid system](http://grids.heroku.com/) to plot the course for your CSS grid. The coordinates generated are based on the 960 Grid System, which is one point of inspiration for Grid Coordinates. Review the included test project for a simple demonstration of how to use Grid Coordinates.
 
 ### Configure as needed and import
 
     // Configure grid coordinates
-    $grid-columns: 12
-    $grid-width: 60px
-    $grid-gutter-width: 20px
+    $grid-columns: 12;
+    $grid-width: 60px;
+    $grid-gutter-width: 20px;
     
-    @import "grid-coordinates"
+    @import "grid-coordinates";
     
-    +grid-coordinates
+    @include grid-coordinates;
 
-You can also set `$overflow` to false (set to true by default) to control which of Compass' two clearfix mixins will be used, `+clearfix` or `+pie-clearfix`. The default setting is `true` and will not clip any content that overflows a grid block. If for some reason you need to clip overflowing content, set `$overflow` to false in your configuration.
+### Grid Coordinates's clearfix
+
+The clearfix provided Grid Coordinates has an option to use a "clearfix-prefix". By default, the clearfix that ships with Grid Coordinates has no prefix and is simply compiled to `.clearfix`. If for some reason you're project already has a clearfix class, you shoulld either update to use the clearfix provided by Grid Coordinates or set the prefix variable to avoid conflicts.
+
+For example:
+
+    $clearfix-prefix: "__"
+
+This would output:
+
+    .__clearfix { ... }
+
+### Legacy users
+
+If you are a legacy user of Grid Coordinates, it's possible that you've used the previously supported clearfix classes, `.grid-clearfix` and `.grid-pie-clearfix`. If that is the case, you may want to update any used of either of those classes, or set the variable `$support-legacy-grid-clearfix` to `true`. This will include those classes in the compiled CSS and `@extend` the new clearfix provided with Grid Coordinates.
 
 ### Using classes and `@extend`
 
-When you use the mixin `+grid-coordinates` (as shown above) you are able to leverage the CSS class selectors in your HTML markup or use the Sass `extend` option to "extend" the class selectors in your Sass stylesheets.
-
-For an example of this in use, look at [grid-coordinates.com/.../demo.sass](https://github.com/adamstac/grid-coordinates.com/blob/master/themes/grid-coordinates/sass/demo.sass).
+When you use the mixin `@include grid-coordinates;` (as shown above) you are able to leverage the CSS class selectors in your HTML markup or use the Sass `@extend` directive to "extend" the class selectors in your Sass stylesheets.
 
 `@extend .grid-container`
 
 `@extend .nested-grid-container`
 
 `@extend .grid-[columns]`
+
+`@extend .grid-full`
 
 `@extend .grid-prefix-[columns]`
 
@@ -59,31 +73,29 @@ For an example of this in use, look at [grid-coordinates.com/.../demo.sass](http
 
 `@extend .grid-pull-[columns]`
 
-`@extend .grid-full`
-
 ### Using mixins
 
-Regardless if go the route of using the mixin `+grid-coordinates` (as shown above) or not, you'll have access to use these mixins in your Sass stylesheets. Keep in mind that when you go the route of using mixins, you could end up replicating a lot of code in your output CSS. Learn more about the [Sass extend concept](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) to see if you should use that method or mixins. Either way, Grid Coordinates got your back.
+Regardless if go the route of using the mixin `@include grid-coordinates;` (as shown above) or not, you'll have access to use these mixins in your Sass stylesheets. Keep in mind that when you go the route of using mixins, you could end up replicating a lot of code in your output CSS. Learn more about the [Sass extend concept](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) to see if you should use that method or mixins. Either way, Grid Coordinates got your back.
 
-`+grid-container`
+`@include grid-container`
 
-`+nested-grid-container`
+`@include nested-grid-container`
 
-`+grid([columns])`
+`@include grid([columns])`
 
-`+grid-prefix([columns])`
+`@include grid-full`
 
-`+grid-suffix([columns])`
+`@include grid-prefix([columns])`
 
-`+grid-push([columns])`
+`@include grid-suffix([columns])`
 
-`+grid-pull([columns])`
+`@include grid-push([columns])`
 
-`+grid-full`
+`@include grid-pull([columns])`
 
 ## License
 
-Copyright (c) 2009 Adam Stacoviak
+Copyright (c) 2009-2011 Adam Stacoviak
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
