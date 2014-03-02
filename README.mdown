@@ -1,5 +1,7 @@
 # Grid Coordinates
 
+This project is unmaintained, but has some good ideas that could be tranistioned to suit RWD and new Sass features.
+
 ## A Sass based CSS Grid Framework Generator
 
 Grid Coordinates is a highly configurable CSS Grid Framework written in [Sass](http://sass-lang.com/), inspired by Nathan Smith's [960.gs](http://960.gs/) and Tyler Tate's [1kb CSS Grid](http://1kbgrid.com/).
